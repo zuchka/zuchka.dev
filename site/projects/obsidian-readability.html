@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>obsidian-readability — zuchka.dev</title>
+  <meta name="description" content="An Obsidian plugin that scores documents with the Flesch Reading Ease formula." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <a class="sb-name" href="/">zuchka<span>.dev</span></a>
+      <div class="sb-role">Matt Abrams // full-stack &amp; oss</div>
+
+      <div class="sb-label">Sections</div>
+      <ul class="sb-list">
+        <li><a href="/">index</a></li>
+        <li><a href="/writing/">writing</a></li>
+        <li class="active"><a href="/projects/">projects</a></li>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/now.html">now</a></li>
+      </ul>
+
+      <div class="sb-label">Projects</div>
+      <ul class="sb-list">
+        <li><a href="/projects/ding.html">ding</a></li>
+        <li><a href="/projects/remove-markdown.html">remove-markdown</a></li>
+        <li><a href="/projects/pegs.html">pegs<span class="play-tag">▸ play</span></a></li>
+        <li class="active"><a href="/projects/obsidian-readability.html">obsidian-readability</a></li>
+      </ul>
+
+      <div class="sb-label">Elsewhere</div>
+      <ul class="sb-list">
+        <li><a href="https://github.com/zuchka">github</a></li>
+        <li><a href="https://www.linkedin.com/in/mattabrams/">linkedin</a></li>
+        <li><a href="mailto:matt.j.abrams@gmail.com">email</a></li>
+        <li><a href="/rss.xml">rss</a></li>
+      </ul>
+
+      <div class="sb-foot">
+        MIT licensed source<br>
+        <a href="https://github.com/zuchka/zuchka.dev">github.com/zuchka/zuchka.dev</a>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section class="hero">
+        <h1>obsidian-<span>readability</span></h1>
+        <p class="tagline">A tiny Obsidian plugin that scores your prose.</p>
+        <p class="subtagline">Calculates the Flesch Reading Ease score for the active document and surfaces it as a status-bar number. Helps you notice when a paragraph is harder to read than it needs to be.</p>
+      </section>
+
+      <section>
+        <h2>By the numbers</h2>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">22★</div>
+            <div class="stat-label">github stars</div>
+            <div class="stat-context">community-store published</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">TS</div>
+            <div class="stat-label">written in</div>
+            <div class="stat-context">obsidian plugin api</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">MIT</div>
+            <div class="stat-label">license</div>
+            <div class="stat-context">since 2023</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>What it does</h2>
+        <p>
+          The Flesch Reading Ease formula maps prose to a 0–100 score: 60–70 is "plain English," 30–50 is "college-level," anything below 30 is hard going. The plugin computes the score for whatever you're editing and shows it in Obsidian's status bar. As you write, the number moves.
+        </p>
+        <pre><code>FRE = 206.835 − 1.015 × (words / sentences) − 84.6 × (syllables / words)</code></pre>
+        <p>
+          Two knobs: shorter sentences, simpler words. The score is a stand-in for both. It's not a writing instructor, but it's a useful nudge.
+        </p>
+      </section>
+
+      <section>
+        <h2>Install</h2>
+        <p>
+          Available in the Obsidian community plugins store. Inside Obsidian:
+        </p>
+        <ul class="features">
+          <li><strong>Settings → Community plugins → Browse</strong></li>
+          <li><strong>Search "Readability"</strong> and install</li>
+          <li><strong>Enable</strong> — the FRE score appears in the status bar</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why</h2>
+        <p>
+          I wanted live feedback on prose density without context-switching to a separate tool. The score isn't gospel — technical writing legitimately scores low — but it catches the times you accidentally pile clauses on top of clauses without noticing.
+        </p>
+      </section>
+
+      <section>
+        <h2>Links</h2>
+        <ul class="features">
+          <li><strong><a href="https://github.com/zuchka/obsidian-readability">github.com/zuchka/obsidian-readability</a></strong> — source, issues</li>
+          <li><strong><a href="https://obsidian.md/plugins?id=readability">Obsidian community plugins</a></strong> — install page</li>
+        </ul>
+      </section>
+
+      <footer class="page-foot">
+        <span>← <a href="/projects/">all projects</a></span>
+        <span><a href="https://github.com/zuchka/zuchka.dev">view source</a></span>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

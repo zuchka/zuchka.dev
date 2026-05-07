@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>remove-markdown — zuchka.dev</title>
+  <meta name="description" content="A small npm package that strips Markdown from text. ~800k downloads per week. Maintained by Matt Abrams since 2015." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <a class="sb-name" href="/">zuchka<span>.dev</span></a>
+      <div class="sb-role">Matt Abrams // full-stack &amp; oss</div>
+
+      <div class="sb-label">Sections</div>
+      <ul class="sb-list">
+        <li><a href="/">index</a></li>
+        <li><a href="/writing/">writing</a></li>
+        <li class="active"><a href="/projects/">projects</a></li>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/now.html">now</a></li>
+      </ul>
+
+      <div class="sb-label">Projects</div>
+      <ul class="sb-list">
+        <li><a href="/projects/ding.html">ding</a></li>
+        <li class="active"><a href="/projects/remove-markdown.html">remove-markdown</a></li>
+        <li><a href="/projects/pegs.html">pegs<span class="play-tag">▸ play</span></a></li>
+        <li><a href="/projects/obsidian-readability.html">obsidian-readability</a></li>
+      </ul>
+
+      <div class="sb-label">Elsewhere</div>
+      <ul class="sb-list">
+        <li><a href="https://github.com/zuchka">github</a></li>
+        <li><a href="https://www.linkedin.com/in/mattabrams/">linkedin</a></li>
+        <li><a href="mailto:matt.j.abrams@gmail.com">email</a></li>
+        <li><a href="/rss.xml">rss</a></li>
+      </ul>
+
+      <div class="sb-foot">
+        MIT licensed source<br>
+        <a href="https://github.com/zuchka/zuchka.dev">github.com/zuchka/zuchka.dev</a>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section class="hero">
+        <h1>remove-<span>markdown</span></h1>
+        <p class="tagline">Strip Markdown stuff from text.</p>
+        <p class="subtagline">A small npm package, ~50 lines of regex. I wrote it in 2015 and never imagined it would still be running a decade later. It is, on a lot of machines.</p>
+      </section>
+
+      <section>
+        <h2>By the numbers</h2>
+        <div class="stats" style="grid-template-columns: repeat(4, 1fr);">
+          <div class="stat">
+            <div class="stat-num">800k</div>
+            <div class="stat-label">downloads / week</div>
+            <div class="stat-context">npm · 7-day average</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">368★</div>
+            <div class="stat-label">github stars</div>
+            <div class="stat-context">68 forks</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">11y</div>
+            <div class="stat-label">in production</div>
+            <div class="stat-context">since feb 2015</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">MIT</div>
+            <div class="stat-label">license</div>
+            <div class="stat-context">no telemetry · no deps</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Install</h2>
+        <pre><code><span class="cmd">npm install</span> remove-markdown</code></pre>
+
+        <p>Then:</p>
+        <pre><code><span class="key">const</span> removeMd = <span class="cmd">require</span>(<span class="str">'remove-markdown'</span>);
+
+<span class="key">const</span> md = <span class="str">`## My Heading
+
+Some **bold** text and a [link](https://example.com).`</span>;
+
+<span class="cmd">console.log</span>(removeMd(md));
+<span class="comment">// "My Heading\n\nSome bold text and a link."</span></code></pre>
+
+        <p>Options:</p>
+        <pre><code>removeMd(md, {
+  <span class="key">stripListLeaders:</span> <span class="num">true</span>,    <span class="comment">// strip bullet/numbered list markers</span>
+  <span class="key">listUnicodeChar:</span> <span class="str">' '</span>,     <span class="comment">// or replace with a unicode char</span>
+  <span class="key">gfm:</span> <span class="num">true</span>,                  <span class="comment">// GitHub-flavored markdown extensions</span>
+  <span class="key">useImgAltText:</span> <span class="num">true</span>         <span class="comment">// keep image alt text vs. removing the whole image</span>
+});</code></pre>
+      </section>
+
+      <section>
+        <h2>Why</h2>
+        <p>
+          The use case is dumb-simple: you have Markdown somewhere — a blog post, a comment, a README — and you want plain text out. For an SEO description. For a search index. For a tweet. For a notification body. Anywhere a renderer isn't going to run.
+        </p>
+        <p>
+          You could pull in a full Markdown parser, build the AST, and walk it. Or you could run a few dozen regex substitutions and call it a day. <code>remove-markdown</code> is the second thing.
+        </p>
+        <div class="callout">
+          <strong>It's not a Markdown parser.</strong> It doesn't understand grammar. It just deletes the syntactic sugar. That's the whole pitch — and it's why it's 50 lines instead of 5,000.
+        </div>
+      </section>
+
+      <section>
+        <h2>What downloads it</h2>
+        <p>
+          Hard to know exactly. The npm dependency graph shows hundreds of packages depend on it directly, and many more pull it in transitively. Some of the more visible ones over the years:
+        </p>
+        <ul class="features">
+          <li><strong>Static site generators and CMSes</strong> — generating plain-text excerpts for OG tags, RSS descriptions, search indexes.</li>
+          <li><strong>Notification pipelines</strong> — turning a Markdown comment into a push body, an email subject line, a Slack fallback.</li>
+          <li><strong>Editor tooling</strong> — word-counts, readability scores, anything that wants to ignore the syntax and look at the prose.</li>
+        </ul>
+        <p>
+          If you've ever copy-pasted a sentence out of a CMS preview and wondered why the asterisks were gone — there's a non-zero chance this thing did it.
+        </p>
+      </section>
+
+      <section>
+        <h2>Maintenance philosophy</h2>
+        <p>
+          The package is in <em>finished</em> mode. It does what it says. Most of the recent activity is dependency-of-dependency security bumps and the occasional regex edge case that someone in production hit before I did.
+        </p>
+        <p>
+          When something breaks, I fix it. When someone opens a feature request that would expand the scope, I usually decline — there are full Markdown parsers for that. The library's value is its smallness.
+        </p>
+      </section>
+
+      <section>
+        <h2>Links</h2>
+        <ul class="features">
+          <li><strong><a href="https://github.com/zuchka/remove-markdown">github.com/zuchka/remove-markdown</a></strong> — source, issues, releases</li>
+          <li><strong><a href="https://www.npmjs.com/package/remove-markdown">npmjs.com/package/remove-markdown</a></strong> — package page, version history</li>
+        </ul>
+      </section>
+
+      <footer class="page-foot">
+        <span>← <a href="/projects/">all projects</a></span>
+        <span><a href="https://github.com/zuchka/zuchka.dev">view source</a></span>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

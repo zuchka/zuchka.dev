@@ -1,0 +1,121 @@
+<!doctype html>
+<!--
+  PROJECT TEMPLATE — copy this file into site/projects/, rename it
+  <slug>.html, and fill in the placeholders below.
+
+  Placeholders to replace:
+    {{NAME_PRE}} {{NAME_GREEN}}  — project name split into two halves so the
+                                   second half renders in the green accent.
+                                   e.g. "remove-" + "markdown".
+    {{TAGLINE}}                 — one short line under the title.
+    {{INTRO}}                   — one paragraph below the tagline.
+    {{STAT_*}}                  — numbers for the 4-up stats grid (see the
+                                   remove-markdown page for example wording).
+    {{...sections...}}          — Why, How, Links, etc. — copy and adapt
+                                   sections from the existing project pages.
+
+  Then update the sidebar 'Projects' lists across the site to add this entry.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{NAME_PRE}}{{NAME_GREEN}} — zuchka.dev</title>
+  <meta name="description" content="{{DESCRIPTION}}" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <a class="sb-name" href="/">zuchka<span>.dev</span></a>
+      <div class="sb-role">Matt Abrams // full-stack &amp; oss</div>
+
+      <div class="sb-label">Sections</div>
+      <ul class="sb-list">
+        <li><a href="/">index</a></li>
+        <li><a href="/writing/">writing</a></li>
+        <li class="active"><a href="/projects/">projects</a></li>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/now.html">now</a></li>
+      </ul>
+
+      <div class="sb-label">Projects</div>
+      <ul class="sb-list">
+        <li><a href="/projects/ding.html">ding</a></li>
+        <li><a href="/projects/remove-markdown.html">remove-markdown</a></li>
+        <li><a href="/projects/pegs.html">pegs<span class="play-tag">▸ play</span></a></li>
+        <li><a href="/projects/obsidian-readability.html">obsidian-readability</a></li>
+        <!-- mark this <li> active when the new page is the current one -->
+      </ul>
+
+      <div class="sb-label">Elsewhere</div>
+      <ul class="sb-list">
+        <li><a href="https://github.com/zuchka">github</a></li>
+        <li><a href="https://www.linkedin.com/in/mattabrams/">linkedin</a></li>
+        <li><a href="mailto:matt.j.abrams@gmail.com">email</a></li>
+        <li><a href="/rss.xml">rss</a></li>
+      </ul>
+
+      <div class="sb-foot">
+        MIT licensed source<br>
+        <a href="https://github.com/zuchka/zuchka.dev">github.com/zuchka/zuchka.dev</a>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section class="hero">
+        <h1>{{NAME_PRE}}<span>{{NAME_GREEN}}</span></h1>
+        <p class="tagline">{{TAGLINE}}</p>
+        <p class="subtagline">{{INTRO}}</p>
+      </section>
+
+      <section>
+        <h2>By the numbers</h2>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">{{STAT_1_NUM}}</div>
+            <div class="stat-label">{{STAT_1_LABEL}}</div>
+            <div class="stat-context">{{STAT_1_CONTEXT}}</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">{{STAT_2_NUM}}</div>
+            <div class="stat-label">{{STAT_2_LABEL}}</div>
+            <div class="stat-context">{{STAT_2_CONTEXT}}</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">{{STAT_3_NUM}}</div>
+            <div class="stat-label">{{STAT_3_LABEL}}</div>
+            <div class="stat-context">{{STAT_3_CONTEXT}}</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>What it does</h2>
+        <p>...</p>
+      </section>
+
+      <section>
+        <h2>Why</h2>
+        <p>...</p>
+      </section>
+
+      <section>
+        <h2>Links</h2>
+        <ul class="features">
+          <li><strong><a href="">github.com/zuchka/{{REPO}}</a></strong> — source</li>
+        </ul>
+      </section>
+
+      <footer class="page-foot">
+        <span>← <a href="/projects/">all projects</a></span>
+        <span><a href="https://github.com/zuchka/zuchka.dev">view source</a></span>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

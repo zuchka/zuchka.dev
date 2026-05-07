@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DING — zuchka.dev</title>
+  <meta name="description" content="A streaming alert engine for ephemeral compute. One binary that wraps your CI job, training run, or batch script, and pings you when it matters." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <a class="sb-name" href="/">zuchka<span>.dev</span></a>
+      <div class="sb-role">Matt Abrams // full-stack &amp; oss</div>
+
+      <div class="sb-label">Sections</div>
+      <ul class="sb-list">
+        <li><a href="/">index</a></li>
+        <li><a href="/writing/">writing</a></li>
+        <li class="active"><a href="/projects/">projects</a></li>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/now.html">now</a></li>
+      </ul>
+
+      <div class="sb-label">Projects</div>
+      <ul class="sb-list">
+        <li class="active"><a href="/projects/ding.html">ding</a></li>
+        <li><a href="/projects/remove-markdown.html">remove-markdown</a></li>
+        <li><a href="/projects/pegs.html">pegs<span class="play-tag">▸ play</span></a></li>
+        <li><a href="/projects/obsidian-readability.html">obsidian-readability</a></li>
+      </ul>
+
+      <div class="sb-label">Elsewhere</div>
+      <ul class="sb-list">
+        <li><a href="https://github.com/zuchka">github</a></li>
+        <li><a href="https://www.linkedin.com/in/mattabrams/">linkedin</a></li>
+        <li><a href="mailto:matt.j.abrams@gmail.com">email</a></li>
+        <li><a href="/rss.xml">rss</a></li>
+      </ul>
+
+      <div class="sb-foot">
+        MIT licensed source<br>
+        <a href="https://github.com/zuchka/zuchka.dev">github.com/zuchka/zuchka.dev</a>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section class="hero">
+        <h1>D<span>ING</span></h1>
+        <p class="tagline">Don't store it. Stream it. DING it.</p>
+        <p class="subtagline">One binary that wraps your CI job, training run, or batch script — and pings you when it matters. Streaming alert engine for ephemeral compute. Currently in active development.</p>
+      </section>
+
+      <section>
+        <h2>The 60-second pitch</h2>
+        <p>
+          Most monitoring tools assume your workload lives long enough to be scraped. Most CI jobs and ML training runs don't. DING is the alert engine that ships <em>with</em> your job, not next to it: rules in a YAML file, evaluated in-process, alerts fire during the run and a summary fires when it exits. Both die together.
+        </p>
+        <pre><code><span class="cmd">ding run</span> -- npm test</code></pre>
+        <p>
+          That's the whole interface. Drop a <code>ding.yaml</code> next to your job, wrap the command, get pinged on Slack when something breaks.
+        </p>
+      </section>
+
+      <section>
+        <h2>Architecture</h2>
+        <ul class="features">
+          <li><strong>Single static binary</strong> — 5MB, no agents, no database, no cloud account.</li>
+          <li><strong>Push-based, in-process</strong> — events emitted by your job, evaluated locally, alerts fire in &lt;5ms.</li>
+          <li><strong>Two modes</strong> — <code>ding run</code> for ephemeral jobs, <code>ding serve</code> for steady-state apps.</li>
+          <li><strong>Auto-detects CI context</strong> — GitHub Actions, GitLab CI, CircleCI, Jenkins, Buildkite, Argo, MLflow, K8s. Branch, commit, run-id, actor — all attached to alerts automatically.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why I built it</h2>
+        <p>
+          I kept hitting the same shape of problem: short-lived job dies, you want to know <em>why</em>, but Prometheus needs a target that lives long enough to be scraped, and standing up Alertmanager + retention + dashboards for a 4-minute CI step is more infra than the step itself.
+        </p>
+        <div class="callout">
+          <strong>Prometheus assumes a fleet. DING assumes a 4-minute CI job.</strong> The architecture difference is push vs. pull. Push wins for ephemeral compute.
+        </div>
+      </section>
+
+      <section>
+        <h2>Links</h2>
+        <ul class="features">
+          <li><strong><a href="https://ding.ing">ding.ing</a></strong> — full docs, recipes, and the 60-second example.</li>
+          <li><strong><a href="https://github.com/ding-labs/ding">github.com/ding-labs/ding</a></strong> — source, issues, releases.</li>
+        </ul>
+      </section>
+
+      <footer class="page-foot">
+        <span>← <a href="/projects/">all projects</a></span>
+        <span><a href="https://github.com/zuchka/zuchka.dev">view source</a></span>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

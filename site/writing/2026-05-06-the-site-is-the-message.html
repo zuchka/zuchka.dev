@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The site is the message — zuchka.dev</title>
+  <meta name="description" content="Notes on building zuchka.dev as plain hand-written HTML, no build step, no JavaScript framework. Why a personal site is one of the few places it still makes sense." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <a class="sb-name" href="/">zuchka<span>.dev</span></a>
+      <div class="sb-role">Matt Abrams // full-stack &amp; oss</div>
+
+      <div class="sb-label">Sections</div>
+      <ul class="sb-list">
+        <li><a href="/">index</a></li>
+        <li class="active"><a href="/writing/">writing</a></li>
+        <li><a href="/projects/">projects</a></li>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/now.html">now</a></li>
+      </ul>
+
+      <div class="sb-label">Projects</div>
+      <ul class="sb-list">
+        <li><a href="/projects/ding.html">ding</a></li>
+        <li><a href="/projects/remove-markdown.html">remove-markdown</a></li>
+        <li><a href="/projects/pegs.html">pegs<span class="play-tag">▸ play</span></a></li>
+        <li><a href="/projects/obsidian-readability.html">obsidian-readability</a></li>
+      </ul>
+
+      <div class="sb-label">Elsewhere</div>
+      <ul class="sb-list">
+        <li><a href="https://github.com/zuchka">github</a></li>
+        <li><a href="https://www.linkedin.com/in/mattabrams/">linkedin</a></li>
+        <li><a href="mailto:matt.j.abrams@gmail.com">email</a></li>
+        <li><a href="/rss.xml">rss</a></li>
+      </ul>
+
+      <div class="sb-foot">
+        MIT licensed source<br>
+        <a href="https://github.com/zuchka/zuchka.dev">github.com/zuchka/zuchka.dev</a>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <article class="post">
+
+        <section class="hero">
+          <div class="post-meta-top">
+            <time datetime="2026-05-06">May 6, 2026</time>
+            <span class="sep">·</span>
+            <span class="kind">essay</span>
+            <span class="sep">·</span>
+            <span>3 min read</span>
+          </div>
+          <h1>The site is the message</h1>
+        </section>
+
+        <section class="post-body">
+
+          <p>
+            This is the first post on zuchka.dev. The site itself is the topic. That's a self-indulgent way to start, but the choices baked into it are choices I want to be honest about up front, so future me can see what past me was thinking.
+          </p>
+
+          <p>
+            The site is hand-written HTML. There is no build step. There is no JavaScript framework. There is one shared CSS file and one HTML file per page. To publish a new post, I copy a template, rename it to a date-prefixed slug, and paste prose between <code>&lt;p&gt;</code> tags. To deploy, the static files get rsync'd to a server. It is, deliberately, the same setup I would have built fifteen years ago.
+          </p>
+
+          <h2>Why bother</h2>
+
+          <p>
+            Static-site generators are great. I've used them. For a docs site or a multi-author blog, an SSG is the right answer — markdown is faster to write than HTML, and a templating layer pays for itself the moment two pages share a navigation bar.
+          </p>
+
+          <p>
+            The thing is, this is a personal site. The cost-benefit looks different here. There are six pages. The "two pages share a navigation bar" problem is real — and I solve it with copy-paste. The cost is that updating the sidebar means editing six files instead of one. The benefit is that there is nothing else to update. No <code>node_modules</code>. No lock file rot. No "the build broke because a transitive dependency changed how it parses front-matter." The site is the source.
+          </p>
+
+          <div class="callout">
+            <strong>The most durable thing about a personal site is that nobody else cares about it.</strong> The web standards committee won't break my <code>&lt;ul&gt;</code> tags. My SSG's maintainer can't get bored and stop publishing security patches. The site has no dependencies because there is nothing to depend on.
+          </div>
+
+          <h2>The "developer cred" part</h2>
+
+          <p>
+            There's also a vibe argument. The site of a developer who works in plain HTML reads, to other developers, as a kind of confidence. <em>I don't need a framework for this.</em> View source on this page, and the page is what you see. There's nothing under the hood because there's no hood.
+          </p>
+
+          <p>
+            That's partly an aesthetic preference and partly a useful filter. The audience I want for this site — engineers and hiring managers — sees through the same lens. They will, if they're curious, view source on this page. I want what they find to look like care.
+          </p>
+
+          <h2>The cost</h2>
+
+          <p>
+            The cost is that posting is slower than it would be in markdown. Every paragraph is wrapped in <code>&lt;p&gt;</code>. Every list item is <code>&lt;li&gt;</code>. Code samples need <code>&lt;pre&gt;&lt;code&gt;</code> and the HTML entities for <code>&amp;lt;</code> and <code>&amp;gt;</code>. The sidebar is duplicated across every page; if I add a new section, I edit it everywhere.
+          </p>
+
+          <p>
+            That's a real cost. I'm choosing to absorb it because I think the friction will keep me honest about what's worth posting. The thirty seconds of HTML tax is small, but it's real, and it has the same shape as the friction that makes me think harder before I publish a tweet that's already half-formed.
+          </p>
+
+          <p>
+            Maybe in a year I'll have written enough posts that the friction stops being a feature, and I'll port to an SSG. If that happens, the migration will be one regex per file. The whole point of plain HTML is that it's portable to anything else.
+          </p>
+
+          <h2>What's here</h2>
+
+          <p>
+            Four projects with their own pages: <a href="/projects/remove-markdown.html">remove-markdown</a>, the npm package that does ~800k downloads a week and that I almost never think about. <a href="/projects/ding.html">DING</a>, the alert engine I'm currently building. <a href="/projects/obsidian-readability.html">obsidian-readability</a>, a small plugin. And <a href="/projects/pegs.html">PEGS</a>, the peg solitaire game my father wrote in C in 1991 — the original MS-DOS binary, untouched, running in your browser through DOSBox emulation. That last one is my favorite.
+          </p>
+
+          <p>
+            And, going forward, more posts. If you want them in a feed: <a href="/rss.xml">RSS</a> works.
+          </p>
+
+        </section>
+
+        <nav class="post-nav">
+          <span class="post-nav-prev post-nav-empty">— first post —</span>
+          <span class="post-nav-next post-nav-empty">— most recent —</span>
+        </nav>
+
+      </article>
+
+      <footer class="page-foot">
+        <span>← <a href="/writing/">all writing</a></span>
+        <span><a href="/rss.xml">rss</a></span>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

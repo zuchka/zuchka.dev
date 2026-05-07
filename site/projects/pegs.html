@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PEGS — zuchka.dev</title>
+  <meta name="description" content="Peg solitaire, written in C by my father Howard Abrams in 1991. The original MS-DOS binary, playable in your browser." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
+
+  <style>
+    /* Page-local: PEGS embed + heritage gif */
+    .pegs-poster {
+      max-width: 100%;
+      border: 1px solid var(--border-2);
+      border-radius: var(--radius);
+      background: #000;
+      display: block;
+      margin-bottom: 18px;
+    }
+    .pegs-stage {
+      background: #000;
+      border: 1px solid var(--border-2);
+      border-radius: var(--radius);
+      aspect-ratio: 16 / 10;
+      max-width: 720px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding: 24px;
+    }
+    .pegs-stage button {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      padding: 12px 28px;
+      cursor: pointer;
+      border-radius: var(--radius);
+    }
+    .pegs-stage button:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+    .pegs-stage .pegs-note {
+      color: var(--fg-faint);
+      font-size: 0.85rem;
+      text-align: center;
+      max-width: 460px;
+    }
+    .pegs-meta-row {
+      display: flex;
+      gap: 24px;
+      font-size: 0.85rem;
+      color: var(--fg-label);
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .pegs-meta-row .pegs-meta-strong { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <a class="sb-name" href="/">zuchka<span>.dev</span></a>
+      <div class="sb-role">Matt Abrams // full-stack &amp; oss</div>
+
+      <div class="sb-label">Sections</div>
+      <ul class="sb-list">
+        <li><a href="/">index</a></li>
+        <li><a href="/writing/">writing</a></li>
+        <li class="active"><a href="/projects/">projects</a></li>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/now.html">now</a></li>
+      </ul>
+
+      <div class="sb-label">Projects</div>
+      <ul class="sb-list">
+        <li><a href="/projects/ding.html">ding</a></li>
+        <li><a href="/projects/remove-markdown.html">remove-markdown</a></li>
+        <li class="active"><a href="/projects/pegs.html">pegs<span class="play-tag">▸ play</span></a></li>
+        <li><a href="/projects/obsidian-readability.html">obsidian-readability</a></li>
+      </ul>
+
+      <div class="sb-label">Elsewhere</div>
+      <ul class="sb-list">
+        <li><a href="https://github.com/zuchka">github</a></li>
+        <li><a href="https://www.linkedin.com/in/mattabrams/">linkedin</a></li>
+        <li><a href="mailto:matt.j.abrams@gmail.com">email</a></li>
+        <li><a href="/rss.xml">rss</a></li>
+      </ul>
+
+      <div class="sb-foot">
+        MIT licensed source<br>
+        <a href="https://github.com/zuchka/zuchka.dev">github.com/zuchka/zuchka.dev</a>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section class="hero">
+        <h1>P<span>EGS</span></h1>
+        <p class="tagline">Peg solitaire. Written in C by my father in 1991.</p>
+        <p class="subtagline">A 35-year-old MS-DOS binary, untouched, running in your browser. The original code my dad wrote on a PC in 1991 — the same game, the same prompts, the same satisfying click of pegs jumping over each other.</p>
+      </section>
+
+      <section>
+        <h2>The game</h2>
+
+        <div class="pegs-meta-row">
+          <span><span class="pegs-meta-strong">1991</span> · written</span>
+          <span><span class="pegs-meta-strong">C</span> · 8KB source</span>
+          <span><span class="pegs-meta-strong">55KB</span> · ms-dos binary</span>
+          <span><span class="pegs-meta-strong">Howard Abrams</span> · author</span>
+        </div>
+
+        <!-- Visible artifact while js-dos is being wired up. demo.gif shows
+             actual gameplay; the embed below boots the .EXE. -->
+        <img src="/projects/pegs/demo.gif"
+             alt="PEGS gameplay — peg solitaire in MS-DOS"
+             class="pegs-poster">
+
+        <div class="pegs-stage" id="pegs-stage">
+          <p class="pegs-note">
+            ▸ Boot the original 1991 MS-DOS binary in this browser tab.
+          </p>
+          <button id="pegs-play">Run PEGS3.EXE</button>
+          <p class="pegs-note" style="font-size: 0.78rem;">
+            ~150KB js-dos runtime loads only when you click. Keyboard controls below.
+          </p>
+        </div>
+
+        <!-- TODO: wire up js-dos. The binary lives at /projects/pegs/PEGS3.EXE.
+             Plan: 30-min spike with js-dos v8 to confirm boot + input handling
+             before final integration. See plan §"PEGS / js-dos integration". -->
+
+      </section>
+
+      <section>
+        <h2>How it plays</h2>
+        <p>
+          A board of 33 holes arranged in a plus-sign. 32 holes start filled with pegs; the center is empty. A move is a peg jumping over an adjacent peg into an empty hole — the jumped peg is removed. You win when one peg remains, ideally in the center.
+        </p>
+        <p>
+          The game prompts you for moves at the keyboard. Pick a peg by coordinate, pick a direction. Peg solitaire is harder than it looks; getting down to one peg in the center is the elegant solution.
+        </p>
+      </section>
+
+      <section>
+        <h2>The story</h2>
+        <p>
+          My father wrote this in C in 1991. Borland C, probably. He was teaching himself to program at the time — a classroom teacher who taught himself enough C to write small games for fun. PEGS was one of them.
+        </p>
+        <p>
+          I found the source files years later, archived on a 3.5" floppy that miraculously still read. The C compiles cleanly with a modern toolchain; the binary in this repo is the original from 1991. Both are checked in.
+        </p>
+        <div class="callout">
+          <strong>The artifact on this page is the literal binary from 1991.</strong> Not a port, not a rewrite — the same bytes that ran on his PC when I was a kid, running in your browser through js-dos / DOSBox-emulated x86. Software outlives the hardware.
+        </div>
+      </section>
+
+      <section>
+        <h2>Run it locally</h2>
+        <p>
+          If you'd rather play it the old-fashioned way:
+        </p>
+        <ul class="features">
+          <li>Install <a href="https://www.dosbox.com/">DOSBox</a></li>
+          <li>Mount the directory: <code>mount c: ~/path/to/PEGS</code></li>
+          <li><code>c:</code></li>
+          <li><code>PEGS3.EXE</code></li>
+        </ul>
+        <p>Or download the binary directly: <a href="/projects/pegs/PEGS3.EXE">PEGS3.EXE</a> (55KB).</p>
+      </section>
+
+      <section>
+        <h2>Links</h2>
+        <ul class="features">
+          <li><strong><a href="https://github.com/zuchka/PEGS">github.com/zuchka/PEGS</a></strong> — source (C) + binary (EXE)</li>
+          <li><strong><a href="https://en.wikipedia.org/wiki/Peg_solitaire">Peg solitaire on Wikipedia</a></strong> — game theory, history, solved positions</li>
+        </ul>
+      </section>
+
+      <footer class="page-foot">
+        <span>← <a href="/projects/">all projects</a></span>
+        <span><a href="https://github.com/zuchka/zuchka.dev">view source</a></span>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

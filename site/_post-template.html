@@ -1,0 +1,112 @@
+<!doctype html>
+<!--
+  POST TEMPLATE — copy this file into site/writing/, rename it
+  YYYY-MM-DD-slug.html, and fill in the placeholders below.
+
+  Placeholders to replace:
+    {{TITLE}}           — post title (also goes in <title> and <h1>)
+    {{DESCRIPTION}}     — meta description, used by social previews
+    {{DATE_HUMAN}}      — e.g. "May 6, 2026"
+    {{DATE_ISO}}        — e.g. "2026-05-06"
+    {{KIND}}            — "essay" or "notes"
+    {{READING_MINS}}    — rough reading time, e.g. "4"
+    {{POST_BODY}}       — the actual post (use <h2>, <p>, <pre>, etc.)
+    {{PREV_HREF}}       — previous post href (or remove the prev nav block)
+    {{PREV_TITLE}}      — previous post title
+    {{NEXT_HREF}}       — next post href (or remove the next nav block)
+    {{NEXT_TITLE}}      — next post title
+
+  After publishing:
+    1. Add a <li> row to /site/writing/index.html in date order.
+    2. Add an <item> entry to /site/rss.xml.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{TITLE}} — zuchka.dev</title>
+  <meta name="description" content="{{DESCRIPTION}}" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <a class="sb-name" href="/">zuchka<span>.dev</span></a>
+      <div class="sb-role">Matt Abrams // full-stack &amp; oss</div>
+
+      <div class="sb-label">Sections</div>
+      <ul class="sb-list">
+        <li><a href="/">index</a></li>
+        <li class="active"><a href="/writing/">writing</a></li>
+        <li><a href="/projects/">projects</a></li>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/now.html">now</a></li>
+      </ul>
+
+      <div class="sb-label">Projects</div>
+      <ul class="sb-list">
+        <li><a href="/projects/ding.html">ding</a></li>
+        <li><a href="/projects/remove-markdown.html">remove-markdown</a></li>
+        <li><a href="/projects/pegs.html">pegs<span class="play-tag">▸ play</span></a></li>
+        <li><a href="/projects/obsidian-readability.html">obsidian-readability</a></li>
+      </ul>
+
+      <div class="sb-label">Elsewhere</div>
+      <ul class="sb-list">
+        <li><a href="https://github.com/zuchka">github</a></li>
+        <li><a href="https://www.linkedin.com/in/mattabrams/">linkedin</a></li>
+        <li><a href="mailto:matt.j.abrams@gmail.com">email</a></li>
+        <li><a href="/rss.xml">rss</a></li>
+      </ul>
+
+      <div class="sb-foot">
+        MIT licensed source<br>
+        <a href="https://github.com/zuchka/zuchka.dev">github.com/zuchka/zuchka.dev</a>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <article class="post">
+
+        <section class="hero">
+          <div class="post-meta-top">
+            <time datetime="{{DATE_ISO}}">{{DATE_HUMAN}}</time>
+            <span class="sep">·</span>
+            <span class="kind">{{KIND}}</span>
+            <span class="sep">·</span>
+            <span>{{READING_MINS}} min read</span>
+          </div>
+          <h1>{{TITLE}}</h1>
+        </section>
+
+        <section class="post-body">
+
+          {{POST_BODY}}
+
+        </section>
+
+        <nav class="post-nav">
+          <a class="post-nav-prev" href="{{PREV_HREF}}">
+            <span class="post-nav-label">← previous</span>
+            <span class="post-nav-title">{{PREV_TITLE}}</span>
+          </a>
+          <a class="post-nav-next" href="{{NEXT_HREF}}">
+            <span class="post-nav-label">next →</span>
+            <span class="post-nav-title">{{NEXT_TITLE}}</span>
+          </a>
+        </nav>
+
+      </article>
+
+      <footer class="page-foot">
+        <span>← <a href="/writing/">all writing</a></span>
+        <span><a href="/rss.xml">rss</a></span>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

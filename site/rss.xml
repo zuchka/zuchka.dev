@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zuchka.dev — writing</title>
+    <link>https://zuchka.dev/</link>
+    <atom:link href="https://zuchka.dev/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Essays and notes by Matt Abrams.</description>
+    <language>en-us</language>
+    <managingEditor>matt.j.abrams@gmail.com (Matt Abrams)</managingEditor>
+    <lastBuildDate>Wed, 06 May 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>The site is the message</title>
+      <link>https://zuchka.dev/writing/2026-05-06-the-site-is-the-message.html</link>
+      <guid isPermaLink="true">https://zuchka.dev/writing/2026-05-06-the-site-is-the-message.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
+      <description>Notes on building zuchka.dev as plain hand-written HTML, no build step, no JavaScript framework. Why a personal site is one of the few places it still makes sense.</description>
+    </item>
+  </channel>
+</rss>
