@@ -131,13 +131,56 @@
           </p>
           <button id="pegs-play">Run PEGS3.EXE</button>
           <p class="pegs-note" style="font-size: 0.78rem;">
-            ~150KB js-dos runtime loads only when you click. Keyboard controls below.
+            js-dos runtime loads only when you click. Keyboard controls below.
           </p>
         </div>
 
-        <!-- TODO: wire up js-dos. The binary lives at /projects/pegs/PEGS3.EXE.
-             Plan: 30-min spike with js-dos v8 to confirm boot + input handling
-             before final integration. See plan §"PEGS / js-dos integration". -->
+        <script>
+          // js-dos v6.22 — pre-monetization, MIT, no subscription/login UI.
+          // Bundle is a plain zip with the .EXE; v6.22 mounts on a <canvas>.
+          (function() {
+            var playBtn = document.getElementById('pegs-play');
+            var stage = document.getElementById('pegs-stage');
+            if (!playBtn || !stage) return;
+
+            playBtn.addEventListener('click', function () {
+              playBtn.disabled = true;
+              playBtn.textContent = 'Loading…';
+
+              var script = document.createElement('script');
+              script.src = 'https://js-dos.com/6.22/current/js-dos.js';
+              script.onload = function () {
+                // Replace placeholder content with a fresh canvas.
+                stage.innerHTML = '';
+                stage.style.padding = '0';
+                stage.style.aspectRatio = '4 / 3';
+
+                var canvas = document.createElement('canvas');
+                canvas.style.width = '100%';
+                canvas.style.height = '100%';
+                canvas.style.display = 'block';
+                stage.appendChild(canvas);
+
+                Dos(canvas, {
+                  wdosboxUrl: 'https://js-dos.com/6.22/current/wdosbox.js'
+                }).ready(function (fs, main) {
+                  fs.extract('/projects/pegs/pegs.zip').then(function () {
+                    main(['-c', 'PEGS3.EXE']);
+                  });
+                });
+              };
+              script.onerror = function () {
+                stage.innerHTML =
+                  '<p class="pegs-note" style="color: var(--num);">' +
+                  'Failed to load js-dos. ' +
+                  '<a href="/projects/pegs/PEGS3.EXE">Download PEGS3.EXE</a> ' +
+                  'and run it in DOSBox locally.' +
+                  '</p>';
+              };
+              document.head.appendChild(script);
+            });
+          })();
+        </script>
 
       </section>
 
