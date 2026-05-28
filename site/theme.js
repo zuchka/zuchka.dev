@@ -3,22 +3,22 @@
   if (!btn) return;
 
   function getTheme() {
-    return document.documentElement.getAttribute('data-theme') || 'light';
+    return document.documentElement.getAttribute('data-theme') || 'dark';
   }
 
   function setTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
+    if (theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
     } else {
       document.documentElement.removeAttribute('data-theme');
     }
     try { localStorage.setItem('theme', theme); } catch (e) {}
-    btn.textContent = theme === 'dark' ? '◑ light mode' : '◑ dark mode';
+    btn.textContent = theme === 'light' ? '◑ dark mode' : '◑ light mode';
   }
 
-  btn.textContent = getTheme() === 'dark' ? '◑ light mode' : '◑ dark mode';
+  btn.textContent = getTheme() === 'light' ? '◑ dark mode' : '◑ light mode';
 
   btn.addEventListener('click', function () {
-    setTheme(getTheme() === 'dark' ? 'light' : 'dark');
+    setTheme(getTheme() === 'light' ? 'dark' : 'light');
   });
 })();
