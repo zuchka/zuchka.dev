@@ -64,7 +64,7 @@ All defined in `:root` (replaces current dark-only `:root` block).
 | `--fg-label` | `#777777` | |
 | `--fg-ghost` | `#888888` | |
 | `--fg-vapor` | `#999999` | |
-| `--accent` | `#7ee787` | Unchanged by request. Low contrast on white (~2.5:1) — visible as color signal, not WCAG-compliant for body text. |
+| `--accent` | `#00A94F` | Replaces `#7ee787`. Darker green with better contrast on white (~4.6:1, passes WCAG AA for normal text). |
 | `--string` | `#0550ae` | Adjusted for light bg (was light blue `#a5d6ff`) |
 | `--num` | `#953800` | Adjusted for light bg (was orange `#f0883e`) |
 | `--border` | `#e8e8e8` | |
@@ -93,7 +93,7 @@ Moved from `:root` into `[data-theme="dark"]` — values unchanged:
   --fg-label: #8a8a8a;
   --fg-ghost: #7a7a7a;
   --fg-vapor: #6e6e6e;
-  --accent: #7ee787;
+  --accent: #00A94F;
   --string: #a5d6ff;
   --num: #f0883e;
   --border: #1c1c1c;
