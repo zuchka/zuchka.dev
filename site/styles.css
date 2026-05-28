@@ -516,3 +516,4 @@ td:first-child { white-space: nowrap; color: var(--fg-label); }
   letter-spacing: 0.5px;
 }
 .theme-toggle:hover { color: var(--fg-muted); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }

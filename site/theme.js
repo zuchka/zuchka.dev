@@ -12,7 +12,7 @@
     } else {
       document.documentElement.removeAttribute('data-theme');
     }
-    localStorage.setItem('theme', theme);
+    try { localStorage.setItem('theme', theme); } catch (e) {}
     btn.textContent = theme === 'dark' ? '◑ light mode' : '◑ dark mode';
   }
 
