@@ -4,6 +4,36 @@
    =========================================================== */
 
 :root {
+  --bg:        #ffffff;
+  --bg-aside:  #f5f5f5;
+  --bg-panel:  #f9f9f9;
+  --bg-inset:  #f0f0f0;
+  --bg-call:   #f5f5f5;
+
+  --fg:         #111111;
+  --fg-strong:  #000000;
+  --fg-muted:   #444444;
+  --fg-dim:     #555555;
+  --fg-faint:   #666666;
+  --fg-label:   #777777;
+  --fg-ghost:   #888888;
+  --fg-vapor:   #999999;
+
+  --accent:    #00A94F;
+  --string:    #0550ae;
+  --num:       #953800;
+
+  --border:    #e8e8e8;
+  --border-2:  #e0e0e0;
+  --border-3:  #d8d8d8;
+  --border-4:  #cccccc;
+
+  --font-mono: "Courier New", Courier, monospace;
+  --radius:    6px;
+  --sidebar-w: 280px;
+}
+
+[data-theme="dark"] {
   --bg:        #0e0e0e;
   --bg-aside:  #0c0c0c;
   --bg-panel:  #141414;
@@ -19,7 +49,7 @@
   --fg-ghost:   #7a7a7a;
   --fg-vapor:   #6e6e6e;
 
-  --accent:    #7ee787;
+  --accent:    #00A94F;
   --string:    #a5d6ff;
   --num:       #f0883e;
 
@@ -27,11 +57,6 @@
   --border-2:  #222;
   --border-3:  #2a2a2a;
   --border-4:  #333;
-
-  --font-mono: "Courier New", Courier, monospace;
-  --radius:    6px;
-
-  --sidebar-w: 280px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -326,13 +351,13 @@ pre {
   font-size: 0.95rem;
   line-height: 1.7;
 }
-pre code { color: #ccc; }
+pre code { color: var(--fg-muted); }
 pre .comment { color: var(--fg-label); }
 pre .key  { color: var(--accent); }
 pre .str  { color: var(--string); }
 pre .num  { color: var(--num); }
 pre .cmd  { color: var(--accent); }
-pre .flag { color: #ccc; }
+pre .flag { color: var(--fg-muted); }
 
 /* ── Feature list (· green dot prefix) ── */
 
@@ -474,3 +499,20 @@ td:first-child { white-space: nowrap; color: var(--fg-label); }
   gap: 8px;
 }
 .page-foot a { color: var(--fg-label); }
+
+/* ── Theme toggle ── */
+
+.theme-toggle {
+  display: block;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--fg-label);
+  cursor: pointer;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+.theme-toggle:hover { color: var(--fg-muted); }
