@@ -22,6 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{NAME_PRE}}{{NAME_GREEN}} — zuchka.dev</title>
   <meta name="description" content="{{DESCRIPTION}}" />
+  <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
   <link rel="stylesheet" href="/styles.css" />
   <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
 </head>
@@ -57,6 +58,8 @@
         <li><a href="mailto:matt.j.abrams@gmail.com">email</a></li>
         <li><a href="/rss.xml">rss</a></li>
       </ul>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">◑ dark mode</button>
 
       <div class="sb-foot">
         MIT licensed source<br>
@@ -117,5 +120,6 @@
 
     </main>
   </div>
+        <script src="/theme.js"></script>
 </body>
 </html>

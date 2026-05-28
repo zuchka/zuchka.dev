@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PEGS — zuchka.dev</title>
   <meta name="description" content="Peg solitaire, written in C by my father Howard Abrams in 1991. The original MS-DOS binary, playable in your browser." />
+  <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
   <link rel="stylesheet" href="/styles.css" />
   <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
 
@@ -94,6 +95,8 @@
         <li><a href="mailto:matt.j.abrams@gmail.com">email</a></li>
         <li><a href="/rss.xml">rss</a></li>
       </ul>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">◑ dark mode</button>
 
       <div class="sb-foot">
         MIT licensed source<br>
@@ -236,5 +239,6 @@
 
     </main>
   </div>
+        <script src="/theme.js"></script>
 </body>
 </html>
