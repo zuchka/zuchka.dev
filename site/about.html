@@ -1,131 +1,214 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — Matt Abrams</title>
-  <meta name="description" content="About Matt Abrams: full-stack engineer, open-source maintainer." />
-  <link rel="stylesheet" href="/styles.css" />
-  <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
-</head>
-<body>
-  <div class="layout">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About — Matt Abrams</title>
+        <meta
+            name="description"
+            content="About Matt Abrams: developer advocate, community builder, and open-source maintainer."
+        />
+        <link rel="stylesheet" href="/styles.css" />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="zuchka.dev — writing"
+            href="/rss.xml"
+        />
+    </head>
+    <body>
+        <div class="layout">
+            <aside class="sidebar">
+                <a class="sb-name" href="/">zuchka<span>.dev</span></a>
+                <div class="sb-role">Matt Abrams // full-stack &amp; oss</div>
 
-    <aside class="sidebar">
-      <a class="sb-name" href="/">zuchka<span>.dev</span></a>
-      <div class="sb-role">Matt Abrams // full-stack &amp; oss</div>
+                <div class="sb-label">Sections</div>
+                <ul class="sb-list">
+                    <li><a href="/">index</a></li>
+                    <li><a href="/writing/">writing</a></li>
+                    <li><a href="/projects/">projects</a></li>
+                    <li class="active"><a href="/about.html">about</a></li>
+                    <li><a href="/now.html">now</a></li>
+                </ul>
 
-      <div class="sb-label">Sections</div>
-      <ul class="sb-list">
-        <li><a href="/">index</a></li>
-        <li><a href="/writing/">writing</a></li>
-        <li><a href="/projects/">projects</a></li>
-        <li class="active"><a href="/about.html">about</a></li>
-        <li><a href="/now.html">now</a></li>
-      </ul>
+                <div class="sb-label">Projects</div>
+                <ul class="sb-list">
+                    <li><a href="/projects/ding.html">ding</a></li>
+                    <li>
+                        <a href="/projects/remove-markdown.html"
+                            >remove-markdown</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/projects/pegs.html"
+                            >pegs<span class="play-tag">▸ play</span></a
+                        >
+                    </li>
+                    <li>
+                        <a href="/projects/obsidian-readability.html"
+                            >obsidian-readability</a
+                        >
+                    </li>
+                </ul>
 
-      <div class="sb-label">Projects</div>
-      <ul class="sb-list">
-        <li><a href="/projects/ding.html">ding</a></li>
-        <li><a href="/projects/remove-markdown.html">remove-markdown</a></li>
-        <li><a href="/projects/pegs.html">pegs<span class="play-tag">▸ play</span></a></li>
-        <li><a href="/projects/obsidian-readability.html">obsidian-readability</a></li>
-      </ul>
+                <div class="sb-label">Elsewhere</div>
+                <ul class="sb-list">
+                    <li><a href="https://github.com/zuchka">github</a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/mattabrams/"
+                            >linkedin</a
+                        >
+                    </li>
+                    <li><a href="mailto:matt.j.abrams@gmail.com">email</a></li>
+                    <li><a href="/rss.xml">rss</a></li>
+                </ul>
 
-      <div class="sb-label">Elsewhere</div>
-      <ul class="sb-list">
-        <li><a href="https://github.com/zuchka">github</a></li>
-        <li><a href="https://www.linkedin.com/in/mattabrams/">linkedin</a></li>
-        <li><a href="mailto:matt.j.abrams@gmail.com">email</a></li>
-        <li><a href="/rss.xml">rss</a></li>
-      </ul>
+                <div class="sb-foot">
+                    MIT licensed source<br />
+                    <a href="https://github.com/zuchka/zuchka.dev"
+                        >github.com/zuchka/zuchka.dev</a
+                    >
+                </div>
+            </aside>
 
-      <div class="sb-foot">
-        MIT licensed source<br>
-        <a href="https://github.com/zuchka/zuchka.dev">github.com/zuchka/zuchka.dev</a>
-      </div>
-    </aside>
+            <main class="main">
+                <section class="hero">
+                    <h1>A<span>bout</span></h1>
+                    <p class="tagline">
+                        Matt Abrams. Developer advocate and full-stack engineer
+                        in Los Angeles.
+                    </p>
+                    <p class="subtagline">
+                        I build products end-to-end: backend systems, web
+                        frontends, the small CLIs that keep shipping bearable. I
+                        also maintain a handful of open-source libraries — most
+                        visibly
+                        <a href="/projects/remove-markdown.html"
+                            >remove-markdown</a
+                        >, which has somehow accumulated over 1 million weekly
+                        npm downloads. I came up through developer advocacy and
+                        community engineering — Grafana Labs, Railway, Builder.io
+                        — so I think about the people building with software as
+                        much as the software itself.
+                    </p>
+                </section>
 
-    <main class="main">
+                <section>
+                    <h2>What I work on</h2>
+                    <p>
+                        I gravitate toward the boring-but-load-bearing parts of
+                        a stack: API design that ages well, observability that
+                        actually fires when things break, dev tooling that the
+                        team forgets exists because it just works. Currently
+                        building <a href="/projects/ding.html">DING</a>, an
+                        alert engine for ephemeral compute — the kind of
+                        monitoring problem Prometheus wasn't designed for.
+                    </p>
+                    <p>
+                        I'm a generalist by inclination. Comfortable in Go,
+                        TypeScript, JavaScript, Python; happy enough in C when I
+                        have to be. More interested in the system above the
+                        language than the language itself.
+                    </p>
+                </section>
 
-      <section class="hero">
-        <h1>A<span>bout</span></h1>
-        <p class="tagline">Matt Abrams. Full-stack engineer in the United States.</p>
-        <p class="subtagline">I build product end-to-end: backend systems, web frontends, the small CLIs that keep shipping bearable. I also maintain a handful of open-source libraries — most visibly <a href="/projects/remove-markdown.html">remove-markdown</a>, which has somehow accumulated 800k weekly npm downloads since I wrote it in 2015.</p>
-      </section>
+                <section>
+                    <h2>Selected work</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Years</th>
+                                <th>Company</th>
+                                <th>Role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024–</td>
+                                <td>Builder.io</td>
+                                <td>DX Engineer / Developer Advocate</td>
+                            </tr>
+                            <tr>
+                                <td>2023–2024</td>
+                                <td>Railway Corporation</td>
+                                <td>Founding Community Engineer</td>
+                            </tr>
+                            <tr>
+                                <td>2021–2023</td>
+                                <td>Grafana Labs</td>
+                                <td>
+                                    Founding Community Engineer → Developer
+                                    Advocate II
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.85rem; color: var(--fg-label)">
+                        Full history on
+                        <a href="https://www.linkedin.com/in/mattabrams/"
+                            >LinkedIn</a
+                        >. Happy to share specifics by email.
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--fg-label)">
+                        Background: PhD, Yale University (History of Art &amp;
+                        Architecture, 2012–2017). BA, UCLA (2009).
+                    </p>
+                </section>
 
-      <section>
-        <h2>What I work on</h2>
-        <p>
-          I gravitate toward the boring-but-load-bearing parts of a stack: API design that ages well, observability that actually fires when things break, dev tooling that the team forgets exists because it just works. Currently building <a href="/projects/ding.html">DING</a>, an alert engine for ephemeral compute — the kind of monitoring problem Prometheus wasn't designed for.
-        </p>
-        <p>
-          I'm a generalist by inclination. Comfortable in Go, TypeScript, JavaScript, Python; happy enough in C when I have to be. More interested in the system above the language than the language itself.
-        </p>
-      </section>
+                <section>
+                    <h2>Outside of work</h2>
+                    <p>
+                        I write occasionally — see
+                        <a href="/writing/">/writing</a>. The intent of this
+                        site is partially to make myself do that more often.
+                    </p>
+                    <p>
+                        I'm also the unofficial archivist of
+                        <a href="/projects/pegs.html"
+                            >a peg solitaire game my father wrote in 1991</a
+                        >. The original C source compiles cleanly today; the
+                        original DOS binary runs in your browser. Software
+                        outlives the hardware.
+                    </p>
+                </section>
 
-      <section>
-        <h2>Selected work</h2>
-        <!-- TODO: replace with actual employment history -->
-        <table>
-          <thead>
-            <tr>
-              <th>Years</th>
-              <th>Company</th>
-              <th>Role</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2024–</td>
-              <td>—</td>
-              <td>Working on DING and consulting on developer tooling.</td>
-            </tr>
-            <tr>
-              <td>—</td>
-              <td>—</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td>—</td>
-              <td>—</td>
-              <td>—</td>
-            </tr>
-          </tbody>
-        </table>
-        <p style="font-size: 0.85rem; color: var(--fg-label);">
-          Full history on <a href="https://www.linkedin.com/in/mattabrams/">LinkedIn</a>. Happy to share specifics by email.
-        </p>
-      </section>
+                <section>
+                    <h2>Get in touch</h2>
+                    <ul class="features">
+                        <li>
+                            <strong>Email</strong> —
+                            <a href="mailto:signups.previous980@passmail.net"
+                                >matt.j.abrams@gmail.com</a
+                            >
+                        </li>
+                        <li>
+                            <strong>GitHub</strong> —
+                            <a href="https://github.com/zuchka"
+                                >github.com/zuchka</a
+                            >
+                        </li>
+                        <li>
+                            <strong>LinkedIn</strong> —
+                            <a href="https://www.linkedin.com/in/mattabrams/"
+                                >linkedin.com/in/mattabrams</a
+                            >
+                        </li>
+                    </ul>
+                    <p>
+                        Best way to reach me is email. I'm slow but I read
+                        everything.
+                    </p>
+                </section>
 
-      <section>
-        <h2>Outside of work</h2>
-        <p>
-          I write occasionally — see <a href="/writing/">/writing</a>. The intent of this site is partially to make myself do that more often.
-        </p>
-        <p>
-          I'm also the unofficial archivist of <a href="/projects/pegs.html">a peg solitaire game my father wrote in 1991</a>. The original C source compiles cleanly today; the original DOS binary runs in your browser. Software outlives the hardware.
-        </p>
-      </section>
-
-      <section>
-        <h2>Get in touch</h2>
-        <ul class="features">
-          <li><strong>Email</strong> — <a href="mailto:matt.j.abrams@gmail.com">matt.j.abrams@gmail.com</a></li>
-          <li><strong>GitHub</strong> — <a href="https://github.com/zuchka">github.com/zuchka</a></li>
-          <li><strong>LinkedIn</strong> — <a href="https://www.linkedin.com/in/mattabrams/">linkedin.com/in/mattabrams</a></li>
-        </ul>
-        <p>
-          Best way to reach me is email. I'm slow but I read everything.
-        </p>
-      </section>
-
-      <footer class="page-foot">
-        <span>← <a href="/">home</a></span>
-        <span><a href="https://github.com/zuchka/zuchka.dev">view source</a></span>
-      </footer>
-
-    </main>
-  </div>
-</body>
+                <footer class="page-foot">
+                    <span>← <a href="/">home</a></span>
+                    <span
+                        ><a href="https://github.com/zuchka/zuchka.dev"
+                            >view source</a
+                        ></span
+                    >
+                </footer>
+            </main>
+        </div>
+    </body>
 </html>
