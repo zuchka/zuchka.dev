@@ -8,6 +8,7 @@
             name="description"
             content="Matt Abrams. Developer advocate, open-source maintainer, community builder. Author of remove-markdown (1m+ npm downloads/wk) and DING."
         />
+        <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
         <link rel="stylesheet" href="/styles.css" />
         <link
             rel="alternate"
@@ -62,6 +63,8 @@
                     <li><a href="mailto:zuchka@pm.me">email</a></li>
                     <li><a href="/rss.xml">rss</a></li>
                 </ul>
+
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">◑ dark mode</button>
 
                 <div class="sb-foot">
                     MIT licensed source<br />
@@ -226,5 +229,6 @@
                 </footer>
             </main>
         </div>
+        <script src="/theme.js"></script>
     </body>
 </html>
