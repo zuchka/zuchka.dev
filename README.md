@@ -1,6 +1,6 @@
 # zuchka.dev
 
-Source for [zuchka.dev](https://zuchka.dev) — Matt Abrams' developer portfolio + blog.
+Source for [zuchka.dev](https://zuchka.dev) — Matt Abrams' developer portfolio and writing archive.
 
 Hand-written HTML, no build step, no JS framework. One shared `styles.css`,
 one HTML file per page. The deployed site is exactly what's in `site/`.
@@ -20,6 +20,7 @@ site/
 ├── rss.xml
 ├── projects/
 │   ├── index.html
+│   ├── free-design-md.html
 │   ├── ding.html
 │   ├── remove-markdown.html
 │   ├── obsidian-readability.html

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Design.md — zuchka.dev</title>
+  <meta name="description" content="Turn any public website into a portable design.md specification for people, coding agents, docs, and repositories." />
+  <script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <a class="sb-name" href="/">zuchka<span>.dev</span></a>
+      <div class="sb-role">Matt Abrams // dev advocate &amp; oss</div>
+
+      <div class="sb-label">Sections</div>
+      <ul class="sb-list">
+        <li><a href="/">index</a></li>
+        <li><a href="/writing/">writing</a></li>
+        <li class="active"><a href="/projects/">projects</a></li>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/now.html">now</a></li>
+      </ul>
+
+      <div class="sb-label">Projects</div>
+      <ul class="sb-list">
+        <li class="active"><a href="/projects/free-design-md.html">free design.md</a></li>
+        <li><a href="/projects/ding.html">ding</a></li>
+        <li><a href="/projects/remove-markdown.html">remove-markdown</a></li>
+        <li><a href="/projects/pegs.html">pegs<span class="play-tag">▸ play</span></a></li>
+        <li><a href="/projects/obsidian-readability.html">obsidian-readability</a></li>
+      </ul>
+
+      <div class="sb-label">Elsewhere</div>
+      <ul class="sb-list">
+        <li><a href="https://github.com/zuchka">github</a></li>
+        <li><a href="https://www.linkedin.com/in/mattabrams/">linkedin</a></li>
+        <li><a href="mailto:zuchka@pm.me">email</a></li>
+        <li><a href="/rss.xml">rss</a></li>
+      </ul>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">◑ light mode</button>
+
+      <div class="sb-foot">
+        MIT licensed source<br>
+        <a href="https://github.com/zuchka/zuchka.dev">github.com/zuchka/zuchka.dev</a>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section class="hero">
+        <h1>Free design<span>.md</span></h1>
+        <p class="tagline">Turn any public website into portable design context.</p>
+        <p class="subtagline">Paste a URL. Get a readable design-system spec with the site's colors, typography, spacing, radii, and component patterns — ready for a person, a coding agent, a repository, or a docs site.</p>
+      </section>
+
+      <section>
+        <h2>By the numbers</h2>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">77</div>
+            <div class="stat-label">curated examples</div>
+            <div class="stat-context">open catalog · MIT</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">$0</div>
+            <div class="stat-label">core extraction</div>
+            <div class="stat-context">no account required</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">4</div>
+            <div class="stat-label">ways to use it</div>
+            <div class="stat-context">web · API · CLI · Docker</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>What it does</h2>
+        <p>
+          Free Design.md loads a public page in a real browser and reads its computed styles. The deterministic pass turns what it finds into structured Markdown: foundations, tokens, type, spacing, radii, and recurring component patterns. That extraction is free and does not need an account or a language model.
+        </p>
+        <p>
+          If the raw artifact needs more interpretation, optional AI enrichment adds higher-level guidance: composition, brand voice, component behavior, and practical do's and don'ts. The result can be downloaded as Markdown, HTML, or MDX.
+        </p>
+        <pre><code><span class="comment"># from the public API</span>
+<span class="cmd">curl</span> "https://freedesign.md/api/extract?url=https://stripe.com&amp;format=json"</code></pre>
+      </section>
+
+      <section>
+        <h2>Why a Markdown design system</h2>
+        <p>
+          Screenshots show the result, but not the rules behind it. Token files capture values, but usually miss composition and component behavior. A <code>design.md</code> sits in the useful middle: compact enough to read and review, structured enough to guide implementation, and plain text enough to travel anywhere.
+        </p>
+        <ul class="features">
+          <li><strong>Agent-readable</strong> — give coding agents concrete design context before they write UI.</li>
+          <li><strong>Portable</strong> — keep it in Git, paste it into chat, or publish it with the rest of the docs.</li>
+          <li><strong>Inspectable</strong> — edit the Markdown directly; there is no proprietary format between you and the output.</li>
+          <li><strong>Self-hostable</strong> — run the same workflow locally in Docker and keep model keys in your own environment.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>The open catalog</h2>
+        <p>
+          The companion catalog contains 77 ready-made <code>design.md</code> files spanning developer tools, commerce, automotive, media, SaaS, and even a few period-specific web designs. It is both a useful starting library and a public record of what the extractor produces.
+        </p>
+      </section>
+
+      <section>
+        <h2>Links</h2>
+        <ul class="features">
+          <li><strong><a href="https://freedesign.md">freedesign.md</a></strong> — paste a URL and generate a design.md.</li>
+          <li><strong><a href="https://freedesign.md/examples">example library</a></strong> — browse the curated catalog in the web app.</li>
+          <li><strong><a href="https://github.com/zuchka/free-design-md">github.com/zuchka/free-design-md</a></strong> — application source and self-hosting instructions.</li>
+          <li><strong><a href="https://github.com/zuchka/free-design-md-catalog">free-design-md-catalog</a></strong> — public CLI and MIT-licensed design.md files.</li>
+        </ul>
+      </section>
+
+      <footer class="page-foot">
+        <span>← <a href="/projects/">all projects</a></span>
+        <span><a href="https://freedesign.md">try it →</a></span>
+      </footer>
+
+    </main>
+  </div>
+  <script src="/theme.js"></script>
+</body>
+</html>
