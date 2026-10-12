@@ -57,21 +57,17 @@ That's it. No deps to install.
    pages. The sidebar is duplicated by design; see the `<aside class="sidebar">`
    block in any existing page.
 
-## Deploy (Cloudflare Pages)
+## Deploy (Cloudflare Workers)
 
-First-time setup:
+The production `zuchka-dev` Worker serves the static files in `site/` at
+`zuchka.dev`. Cloudflare Workers Builds is connected to this GitHub repository.
+A push to `main` runs `npx wrangler deploy` with `site/` as the asset directory;
+Wrangler generates its configuration during the build. There is no separate Pages
+project or checked-in Wrangler config.
 
-1. Push the repo to GitHub (e.g. `github.com/zuchka/zuchka.dev`).
-2. In the Cloudflare Pages dashboard: Create a project → Connect to Git →
-   pick the repo.
-3. Build settings:
-   - Framework preset: `None`
-   - Build command: *(leave empty)*
-   - Build output directory: `site`
-4. Add `zuchka.dev` (and `www.zuchka.dev` if desired) as custom domains in
-   the Pages project. Cloudflare auto-creates DNS records.
-
-Subsequent deploys: `git push origin main`. Cloudflare deploys on every push.
+To publish, commit and push to `main`, then check the `zuchka-dev` build in
+Cloudflare and the live site. If an old page persists after a successful deploy,
+purge the `zuchka.dev` host from the zone cache.
 
 ### Headers
 
