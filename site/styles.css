@@ -1,6 +1,6 @@
 /* ===========================================================
    zuchka.dev — shared stylesheet
-   tokens mirror ~/code/ding-website/site/index.html
+   palette inspired by Ding's original website
    =========================================================== */
 
 :root {
@@ -193,6 +193,8 @@ code { color: var(--string); font-family: var(--font-mono); font-size: 0.95em; }
   color: var(--fg-faint);
   max-width: 640px;
 }
+
+.ding-mark { display: block; width: 88px; height: auto; margin-bottom: 18px; }
 
 /* ── Section heading ── */
 

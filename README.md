@@ -80,8 +80,8 @@ COEP-credentialless to allow js-dos's SharedArrayBuffer-backed emulation.
 
 ## Style tokens
 
-Tokens mirror [`ding-website`](https://github.com/zuchka/ding-website) — same
-Courier New, `#0e0e0e` background, `#7ee787` green accent. Defined as CSS
+The palette began with Ding's original website: Courier New, a `#0e0e0e`
+background, and a `#7ee787` green accent. This site's tokens are defined as CSS
 custom properties at the top of `site/styles.css`.
 
 ## License

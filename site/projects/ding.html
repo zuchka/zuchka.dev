@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DING — zuchka.dev</title>
-  <meta name="description" content="A streaming alert engine for ephemeral compute. One binary that wraps your CI job, training run, or batch script, and pings you when it matters." />
+  <meta name="description" content="Ding watches APIs, local checks, and pushed JSON, keeps the evidence, and delivers durable alerts. Install the local runtime and Console with Homebrew." />
   <script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
   <link rel="stylesheet" href="/styles.css" />
   <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
@@ -14,7 +14,7 @@
 
     <aside class="sidebar">
       <a class="sb-name" href="/">zuchka<span>.dev</span></a>
-      <div class="sb-role">Matt Abrams // full-stack &amp; oss</div>
+      <div class="sb-role">Matt Abrams // dev advocate &amp; oss</div>
 
       <div class="sb-label">Sections</div>
       <ul class="sb-list">
@@ -27,8 +27,8 @@
 
       <div class="sb-label">Projects</div>
       <ul class="sb-list">
-        <li><a href="/projects/free-design-md.html">free design.md</a></li>
         <li class="active"><a href="/projects/ding.html">ding</a></li>
+        <li><a href="/projects/free-design-md.html">free design.md</a></li>
         <li><a href="/projects/remove-markdown.html">remove-markdown</a></li>
         <li><a href="/projects/pegs.html">pegs<span class="play-tag">▸ play</span></a></li>
         <li><a href="/projects/obsidian-readability.html">obsidian-readability</a></li>
@@ -53,54 +53,61 @@
     <main class="main">
 
       <section class="hero">
+        <img class="ding-mark" src="/projects/ding-logo.svg" width="88" height="87" alt="" />
         <h1>D<span>ING</span></h1>
-        <p class="tagline">Don't store it. Stream it. DING it.</p>
-        <p class="subtagline">One binary that wraps your CI job, training run, or batch script — and pings you when it matters. An earlier experiment in monitoring ephemeral compute.</p>
+        <p class="tagline">Persistent watches. Durable alerts.</p>
+        <p class="subtagline">Watch an API, run a local check, or push JSON from your software. Ding remembers what it saw, explains why a condition fired, and keeps trying to deliver the alert.</p>
       </section>
 
       <section>
         <h2>Status</h2>
         <div class="callout">
-          <strong>DING is not my current focus.</strong> The site, docs, and source remain online, but active development has slowed while I work on <a href="/projects/free-design-md.html">Free Design.md</a>.
+          <strong>Ding is active again.</strong> The persistent watch runtime, local Console, and native macOS notifications are in the public <a href="https://github.com/ding-labs/ding/releases/tag/v0.15.2">v0.15.2 release</a>. Ding Cloud and the ChatGPT and Claude plugin packages are being qualified separately.
         </div>
       </section>
 
       <section>
-        <h2>The 60-second pitch</h2>
+        <h2>Get started</h2>
         <p>
-          Most monitoring tools assume your workload lives long enough to be scraped. Most CI jobs and ML training runs don't. DING is the alert engine that ships <em>with</em> your job, not next to it: rules in a YAML file, evaluated in-process, alerts fire during the run and a summary fires when it exits. Both die together.
+          On macOS or Linux, install Ding with Homebrew. Setup guides you through background startup and opens the Console, where you can create a first watch and test an alert. Personal local use needs no account or model key.
         </p>
-        <pre><code><span class="cmd">ding run</span> -- npm test</code></pre>
+        <pre><code><span class="cmd">brew install</span> ding-labs/tap/ding
+<span class="cmd">ding setup</span>
+<span class="cmd">ding ui</span></code></pre>
         <p>
-          That's the whole interface. Drop a <code>ding.yaml</code> next to your job, wrap the command, get pinged on Slack when something breaks.
+          Start with the <a href="https://docs.ding.ing/operate/local-setup/">local setup guide</a>, or browse the <a href="https://ding.ing/examples/">examples</a> before installing.
         </p>
       </section>
 
       <section>
-        <h2>Architecture</h2>
+        <h2>What it does</h2>
         <ul class="features">
-          <li><strong>Single static binary</strong> — 5MB, no agents, no database, no cloud account.</li>
-          <li><strong>Push-based, in-process</strong> — events emitted by your job, evaluated locally, alerts fire in &lt;5ms.</li>
-          <li><strong>Two modes</strong> — <code>ding run</code> for ephemeral jobs, <code>ding serve</code> for steady-state apps.</li>
-          <li><strong>Auto-detects CI context</strong> — GitHub Actions, GitLab CI, CircleCI, Jenkins, Buildkite, Argo, MLflow, K8s. Branch, commit, run-id, actor — all attached to alerts automatically.</li>
+          <li><strong>Observe</strong> — poll an HTTP endpoint, run an explicit local command, or accept authenticated JSON.</li>
+          <li><strong>Evaluate</strong> — use versioned YAML to detect repeated failures, changed values, missing data, or new provider events.</li>
+          <li><strong>Remember</strong> — keep incident state, event evidence, and pending deliveries in SQLite across restarts.</li>
+          <li><strong>Deliver</strong> — use the Console, desktop notifications, webhooks, Slack, or Discord, with durable retries for remote delivery.</li>
+          <li><strong>Investigate</strong> — inspect watches, events, and delivery attempts in the local Console or through the CLI and API. A local MCP adapter lets agents work with the same watch definitions.</li>
         </ul>
       </section>
 
       <section>
         <h2>Why I built it</h2>
         <p>
-          I kept hitting the same shape of problem: short-lived job dies, you want to know <em>why</em>, but Prometheus needs a target that lives long enough to be scraped, and standing up Alertmanager + retention + dashboards for a 4-minute CI step is more infra than the step itself.
+          An alert is only useful if you can tell what happened and whether anyone received it. Ding connects the observation, the decision, the event, and the delivery attempt. It keeps watching after you close the terminal, and it gives both people and coding agents a way to inspect the same evidence.
         </p>
         <div class="callout">
-          <strong>Prometheus assumes a fleet. DING assumes a 4-minute CI job.</strong> The architecture difference is push vs. pull. Push wins for ephemeral compute.
+          <strong>One watch, four connected stages:</strong> observe → evaluate → record → deliver. The daemon does the checking; it does not call a model on each observation.
         </div>
       </section>
 
       <section>
         <h2>Links</h2>
         <ul class="features">
-          <li><strong><a href="https://ding.ing">ding.ing</a></strong> — full docs, recipes, and the 60-second example.</li>
-          <li><strong><a href="https://github.com/ding-labs/ding">github.com/ding-labs/ding</a></strong> — source, issues, releases.</li>
+          <li><strong><a href="https://ding.ing/">ding.ing</a></strong> — product overview and runnable examples.</li>
+          <li><strong><a href="https://docs.ding.ing/">docs.ding.ing</a></strong> — setup, watch guides, reference, and operations.</li>
+          <li><strong><a href="https://docs.ding.ing/integrations/">Agent integrations</a></strong> — the local MCP adapter and the qualification status of ChatGPT and Claude packages.</li>
+          <li><strong><a href="https://github.com/ding-labs/ding">github.com/ding-labs/ding</a></strong> — Apache-2.0 source, issues, and releases.</li>
+          <li><strong><a href="https://docs.ding.ing/legacy/">Legacy migration guide</a></strong> — for users of the old <code>ding run</code> and <code>ding serve</code> runtime.</li>
         </ul>
       </section>
 
