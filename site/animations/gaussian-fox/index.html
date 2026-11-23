@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What makes this fox look solid? — zuchka.dev</title>
+  <meta name="author" content="Matt Abrams" />
+  <meta name="description" content="Soft blobs of color overlap to draw the fox. At the eyelid, their colors blend into a smooth edge." />
+  <link rel="canonical" href="https://zuchka.dev/animations/gaussian-fox/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="What makes this fox look solid?" />
+  <meta property="og:description" content="Soft blobs of color overlap to draw the fox. At the eyelid, their colors blend into a smooth edge." />
+  <meta property="og:url" content="https://zuchka.dev/animations/gaussian-fox/" />
+  <meta property="og:image" content="https://zuchka.dev/films/gaussian-fox/v2/poster-wide.jpg" />
+  <meta property="og:image:alt" content="Opening frame from What makes this fox look solid?" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/animations/animations.css" />
+  <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
+  <script src="/theme.js" defer></script>
+  <script src="/animations/playback.js" defer></script>
+</head>
+<body>
+  <div class="layout">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="/">zuchka.dev</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="/projects/">Projects</a>
+          <a href="/writing/">Writing</a>
+          <a href="/about.html">About</a>
+          <a href="/now.html">Now</a>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button>
+      </div>
+    </header>
+    <main class="main film-watch" id="main" tabindex="-1">
+      <a class="film-back" href="/animations/">← All animations</a>
+      <video class="film-player" controls playsinline preload="metadata" poster="/films/gaussian-fox/v2/poster.webp" aria-labelledby="film-title">
+        <source media="(min-width: 48rem) and (pointer: fine), (min-width: 48rem) and (min-height: 36rem)" src="/films/gaussian-fox/v2/gaussian-fox-wide.mp4" data-poster="/films/gaussian-fox/v2/poster-wide.jpg" type="video/mp4" />
+        <source src="/films/gaussian-fox/v2/gaussian-fox-feed.mp4" data-poster="/films/gaussian-fox/v2/poster.webp" type="video/mp4" />
+        <a href="/films/gaussian-fox/v2/gaussian-fox-wide.mp4">Watch What makes this fox look solid?</a>
+      </video>
+      <article class="film-copy">
+        <p class="film-meta">Gaussian splatting · <time datetime="PT0M36S">0:36</time></p>
+        <h1 id="film-title">What makes this fox look solid?</h1>
+        <p>Soft blobs of color overlap to draw the fox. At the eyelid, their colors blend into a smooth edge.</p>
+        <details>
+          <summary>Transcript and sources</summary>
+          <h2 id="visual-transcript">Visual transcript</h2>
+          <p><strong>0:00–0:05</strong> A seated porcelain fox comes into view. Follow the black rim of its eye as the camera moves in.</p>
+          <p><strong>0:05–0:11</strong> The camera passes through the eyelid and isolates one splat. A splat is a soft blob of color with a position and shape in 3D.</p>
+          <p><strong>0:11–0:16</strong> A marker traces the splat from its center toward its fading edge. Its color contributes most at the center.</p>
+          <p><strong>0:16–0:22</strong> Back at the eye, only one in eight splats is visible. What will fill the gaps? The camera holds still for two seconds.</p>
+          <p><strong>0:22–0:29</strong> The remaining splats return. From the same angle, watch their colors overlap and blend into a smooth eyelid.</p>
+          <p><strong>0:29–0:36</strong> The camera pulls back to the whole fox. The same 76,587 splats draw it from each angle. This is called Gaussian splatting.</p>
+          <h2 id="sources">Sources</h2>
+          <p>The fox was sculpted in Blender. Brush fitted its 76,587 splats from 48 rendered views. The close-up follows a single fitted splat on the near eyelid. <a href="https://github.com/ArthurBrussee/brush">Brush</a></p>
+          <p>The rendering method is described by Kerbl, Kopanas, Leimkühler, and Drettakis in <em>3D Gaussian Splatting for Real-Time Radiance Field Rendering</em> (2023). <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">Paper and project</a></p>
+        </details>
+        <details id="downloads">
+          <summary>Downloads and standalone player</summary>
+          <ul>
+            <li><a href="/films/gaussian-fox/v2/gaussian-fox-feed.mp4" download>Feed · 4:5 MP4</a></li>
+            <li><a href="/films/gaussian-fox/v2/gaussian-fox-vertical.mp4" download>Vertical · 9:16 MP4</a></li>
+            <li><a href="/films/gaussian-fox/v2/gaussian-fox-wide.mp4" download>Widescreen · 16:9 MP4</a></li>
+            <li><a href="/films/gaussian-fox/v2/gaussian-fox.html">Open the standalone player</a></li>
+          </ul>
+        </details>
+      </article>
+    </main>
+    <footer class="page-foot">
+      <div class="footer-inner">
+        <span>© 2026 Matt Abrams</span>
+        <nav aria-label="Footer">
+          <a href="https://github.com/zuchka">GitHub</a>
+          <a href="https://www.linkedin.com/in/matt-abrams-86732b1a4/">LinkedIn</a>
+          <a href="mailto:matt.j.abrams@gmail.com">Email</a>
+          <a href="/rss.xml">RSS</a>
+          <a href="https://github.com/zuchka/zuchka.dev">Site source</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
