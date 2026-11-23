@@ -86,7 +86,8 @@ COEP-credentialless to allow js-dos's SharedArrayBuffer-backed emulation.
 ## Style tokens
 
 The shared tokens in `site/styles.css` define a warm off-white canvas, dark ink,
-system sans typography, and a green action accent. Light is the first-visit
+system sans typography, and a green action accent. The featured project and
+editorial links use the same violet palette as the animations. Light is the first-visit
 default. The header toggle saves the reader’s choice under `theme` in local
 storage. Each page restores an explicit dark preference before loading CSS.
 
