@@ -1,6 +1,6 @@
 /* zuchka.dev */
 :root {
-  color-scheme: light;
+  color-scheme: only light;
   --bg: #f7f6f2;
   --bg-panel: #fff;
   --fg: #222b25;

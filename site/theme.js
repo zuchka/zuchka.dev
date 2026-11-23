@@ -3,18 +3,18 @@
   if (!button) return;
 
   const root = document.documentElement;
-  function updateButton() {
-    button.setAttribute('aria-pressed', String(root.dataset.theme === 'dark'));
+  function setDarkMode(enabled) {
+    if (enabled) root.dataset.theme = 'dark';
+    else delete root.dataset.theme;
+    button.setAttribute('aria-pressed', String(enabled));
   }
 
   button.addEventListener('click', function () {
-    const dark = root.dataset.theme !== 'dark';
-    if (dark) root.dataset.theme = 'dark';
-    else delete root.dataset.theme;
-    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch {}
-    updateButton();
+    setDarkMode(root.dataset.theme !== 'dark');
+  });
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) setDarkMode(false);
   });
 
-  updateButton();
   button.hidden = false;
 })();
