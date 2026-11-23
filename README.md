@@ -46,8 +46,8 @@ That's it. No deps to install.
 2. Replace the `{{TOKENS}}` in the new file
 3. Add a `<div class="post-row">` row to `site/writing/index.html` (newest first)
 4. Add a corresponding `<item>` to `site/rss.xml` (newest first)
-5. Update the "Recent writing" section on `site/index.html` if it should appear there
-6. Commit, push — Cloudflare Pages auto-deploys
+5. When publishing the first post, replace the empty-state message on the writing index.
+6. Commit and follow the deployment steps below.
 
 ## Adding a new project page
 

@@ -321,7 +321,7 @@ p { margin-bottom: 16px; max-width: 70ch; }
   font-size: 1rem;
   flex: 1;
 }
-.post-row .ttl:hover { color: var(--fg); text-decoration: none; }
+.post-row .ttl:hover { text-decoration: underline; }
 .post-row .pill {
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -330,10 +330,8 @@ p { margin-bottom: 16px; max-width: 70ch; }
   white-space: nowrap;
 }
 
-.archive-link {
-  margin-top: 14px;
-  font-size: 0.85rem;
-  color: var(--fg-muted);
+@media (max-width: 480px) {
+  .post-row { flex-direction: column; gap: 4px; }
 }
 
 /* ── Callout ── */
@@ -373,11 +371,18 @@ pre .key, pre .cmd { font-weight: 600; }
   overflow-wrap: anywhere;
 }
 
-/* ── Tables (about / cv) ── */
+/* Reading pages */
+.reading { max-width: 65ch; overflow-wrap: anywhere; }
+.reading section { margin-bottom: 44px; }
+.metadata { color: var(--fg-muted); font-size: 0.8125rem; }
+.reading .hero .actions { margin-top: 24px; }
+
+/* Work history */
 
 table {
   width: 100%;
   border-collapse: collapse;
+  overflow-wrap: normal;
   font-size: 0.95rem;
   margin-bottom: 24px;
 }
@@ -394,92 +399,38 @@ td {
   color: var(--fg-muted);
   vertical-align: top;
 }
-td:first-child { white-space: nowrap; color: var(--fg-muted); }
+td:first-child { color: var(--fg-muted); }
+@media (max-width: 480px) {
+  th, td { padding: 10px 8px 10px 0; }
+  th:last-child, td:last-child { padding-right: 0; }
+}
 
 /* ── Post (writing) page ── */
 
-.post .hero { margin-bottom: 36px; }
-
-.post-meta-top {
-  font-size: 0.85rem;
-  color: var(--fg-muted);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 18px;
-}
-.post-meta-top time { color: var(--fg-muted); }
-.post-meta-top .kind { color: var(--fg); }
-.post-meta-top .sep { color: var(--fg-muted); margin: 0 8px; }
-
-.post .hero h1 {
-  font-size: clamp(2rem, 4.5vw, 2.6rem);
-  letter-spacing: -0.5px;
-  line-height: 1.2;
-}
-
-.post-body { max-width: 720px; }
-.post-body p,
-.post-body ul,
-.post-body ol {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: var(--fg-muted);
-  margin-bottom: 22px;
-  max-width: none;
-}
-.post-body h2 {
-  margin-top: 48px;
-  margin-bottom: 18px;
-}
-.post-body h3 {
-  margin-top: 32px;
-}
-.post-body strong { color: var(--fg); }
-.post-body em { color: var(--fg); }
-.post-body code { color: var(--fg); }
-
-.post-body ul,
-.post-body ol {
-  padding-left: 1.4em;
-}
-.post-body li { margin-bottom: 6px; }
+.post .hero { margin-bottom: 32px; }
+.post-meta-top { color: var(--fg-muted); font-size: 0.8125rem; margin-bottom: 12px; }
+.post-meta-top .sep { margin-inline: 4px; }
+.post .hero h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); }
+.post-body { line-height: 1.7; }
+.post-body h2 { margin-top: 40px; }
+.post-body ul, .post-body ol { padding-left: 1.4em; margin-bottom: 16px; }
+.post-body li + li { margin-top: 6px; }
+.post-body pre { overflow-wrap: normal; }
 
 .post-nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  margin-top: 56px;
-}
-.post-nav > * {
-  background: var(--bg-panel);
-  padding: 18px 22px;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 0.95rem;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
 }
-.post-nav .post-nav-next { text-align: right; align-items: flex-end; }
-.post-nav .post-nav-label {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--fg-muted);
-}
-.post-nav .post-nav-title { color: var(--fg); }
-.post-nav a:hover .post-nav-title { color: var(--fg); }
-.post-nav .post-nav-empty {
-  color: var(--fg-muted);
-  font-style: italic;
-}
-.post-nav .post-nav-empty .post-nav-label { display: none; }
-
-@media (max-width: 600px) {
-  .post-nav { grid-template-columns: 1fr; }
-  .post-nav .post-nav-next { text-align: left; align-items: flex-start; }
+.post-nav > * { flex: 1; min-width: 0; }
+.post-nav-next { text-align: right; }
+.post-nav-label { display: block; color: var(--fg-muted); font-size: 0.8125rem; }
+@media (max-width: 480px) {
+  .post-nav { flex-direction: column; }
+  .post-nav-next { text-align: left; }
 }
 
 /* Footer */

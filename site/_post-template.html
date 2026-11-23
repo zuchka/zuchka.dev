@@ -17,7 +17,7 @@
     {{NEXT_TITLE}}      — next post title
 
   After publishing:
-    1. Add a <li> row to /site/writing/index.html in date order.
+    1. Add a <div class="post-row"> to /site/writing/index.html in date order.
     2. Add an <item> entry to /site/rss.xml.
 -->
 <html lang="en">
@@ -47,7 +47,7 @@
       </div>
     </header>
 
-    <main class="main" id="main" tabindex="-1">
+    <main class="main reading" id="main" tabindex="-1">
 
       <article class="post">
 
@@ -68,7 +68,7 @@
 
         </section>
 
-        <nav class="post-nav">
+        <nav class="post-nav" aria-label="Adjacent posts">
           <a class="post-nav-prev" href="{{PREV_HREF}}">
             <span class="post-nav-label">← previous</span>
             <span class="post-nav-title">{{PREV_TITLE}}</span>
