@@ -34,32 +34,29 @@
             </header>
 
             <main class="main" id="main" tabindex="-1">
-                <section class="hero">
-                    <h1>Matt <span>Abrams</span></h1>
-                    <p class="tagline">
-                        Developer advocate. Open-source maintainer. Community
-                        builder.
-                    </p>
-                    <p class="subtagline">
-                        I help developers build better products — through
-                        advocacy, tooling, and community. Three companies, one
-                        thread: make the developer experience less painful.
-                        Currently building <a href="/projects/ding.html">Ding</a>,
-                        a persistent watch and alert system for developers and
-                        agents, alongside
-                        <a href="/projects/free-design-md.html">Free Design.md</a>.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Building now</h2>
-                    <div class="callout">
-                        <strong><a href="/projects/ding.html">Ding is back.</a></strong>
-                        Watch an API, run a local check, or push JSON. Ding keeps
-                        the evidence and delivers alerts that survive restarts.
-                        <a href="https://ding.ing/">Explore Ding</a> ·
-                        <a href="https://docs.ding.ing/operate/local-setup/">Install locally</a>
+                <section class="home-hero" aria-labelledby="intro">
+                    <div>
+                        <h1 id="intro">Matt <mark>Abrams</mark></h1>
+                        <p class="home-role">Developer advocate. Open-source maintainer. Community builder.</p>
+                        <p class="home-intro">I help developers build better products through advocacy, tooling, and community. Currently building Ding and <a href="/projects/free-design-md.html">Free Design.md</a>.</p>
+                        <div class="actions">
+                            <a class="button" href="/projects/">View projects</a>
+                            <a class="text-link" href="/about.html">About me <span aria-hidden="true">→</span></a>
+                        </div>
                     </div>
+                    <aside class="featured-project" aria-labelledby="featured-title">
+                        <img src="/projects/ding-logo.svg" width="72" height="71" alt="" />
+                        <p class="overline">Building now</p>
+                        <h2 id="featured-title">Ding</h2>
+                        <p>Watch an API, run a local check, or push JSON. Ding keeps the evidence and delivers alerts that survive restarts.</p>
+                        <pre><code>brew install ding-labs/tap/ding
+ding setup
+ding ui</code></pre>
+                        <div class="actions">
+                            <a class="text-link" href="/projects/ding.html">Project notes <span aria-hidden="true">→</span></a>
+                            <a href="https://docs.ding.ing/operate/local-setup/">Install locally</a>
+                        </div>
+                    </aside>
                 </section>
 
                 <section>
@@ -77,13 +74,13 @@
                         </div>
                         <div class="stat">
                             <div class="stat-num">408★</div>
-                            <div class="stat-label">github stars</div>
+                            <div class="stat-label">GitHub stars</div>
                             <div class="stat-context">
-                                across 6 oss projects
+                                across 6 open-source projects
                             </div>
                         </div>
                         <div class="stat">
-                            <div class="stat-num">10y</div>
+                            <div class="stat-num">10 years</div>
                             <div class="stat-label">shipping product</div>
                             <div class="stat-context">
                                 dev advocacy · community
@@ -96,7 +93,7 @@
                     <h2>Open source</h2>
                     <div class="oss-list">
                         <div class="oss-row">
-                            <a class="oss-name" href="/projects/ding.html">ding</a>
+                            <a class="oss-name" href="/projects/ding.html">Ding</a>
                             <p class="oss-desc">
                                 Persistent watches and durable alerts for APIs,
                                 local checks, and pushed events. Active development.
@@ -108,7 +105,7 @@
                             <a
                                 class="oss-name"
                                 href="/projects/free-design-md.html"
-                                >free design.md</a
+                                >Free Design.md</a
                             >
                             <p class="oss-desc">
                                 Extract a portable design-system spec from any
@@ -160,26 +157,20 @@
 
                         <div class="oss-row">
                             <a class="oss-name" href="/projects/pegs.html"
-                                >pegs</a
+                                >PEGS</a
                             >
                             <p class="oss-desc">
-                                Peg solitaire — written in C by my father in
-                                1991. Plays in browser via js-dos.
+                                Peg solitaire, written in C by my father in 1991. Play the original MS-DOS binary in your browser.
                             </p>
                             <span class="oss-meta"
                                 >c<span class="sep">·</span>1991<span
                                     class="sep"
                                     >·</span
-                                ><a href="/projects/pegs.html">▸ play</a></span
+                                ><a href="/projects/pegs.html#pegs-play">Play →</a></span
                             >
                         </div>
                     </div>
 
-                    <div class="callout">
-                        <strong>About PEGS:</strong> the original MS-DOS binary,
-                        untouched, running in your browser via js-dos. A 1991
-                        family heirloom rendered as a 2026 web page.
-                    </div>
                 </section>
 
             </main>
