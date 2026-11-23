@@ -285,6 +285,12 @@ p { margin-bottom: 16px; max-width: 70ch; }
   border-bottom: 1px solid var(--border);
 }
 .oss-name { font-size: 1.125rem; font-weight: 600; letter-spacing: -0.025em; text-decoration: none; }
+.film-sample {
+  width: 128px;
+  justify-self: end;
+  align-self: center;
+}
+.film-sample img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
 .oss-name:hover { text-decoration: underline; }
 .oss-row .oss-desc { color: var(--fg-muted); font-size: 0.9375rem; margin: 0; }
 .oss-meta { text-align: end; color: var(--fg-muted); font-size: 0.8125rem; }
@@ -293,6 +299,7 @@ p { margin-bottom: 16px; max-width: 70ch; }
 @media (max-width: 760px) {
   .oss-row { grid-template-columns: 1fr; gap: 4px; }
   .oss-meta { text-align: start; }
+  .film-sample { justify-self: start; margin-top: 8px; }
 }
 @media (max-width: 600px) {
   .stats { grid-template-columns: 1fr; }
