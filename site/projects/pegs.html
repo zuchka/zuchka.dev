@@ -67,45 +67,21 @@
 <body>
   <div class="layout">
 
-    <aside class="sidebar">
-      <a class="sb-name" href="/">zuchka<span>.dev</span></a>
-      <div class="sb-role">Matt Abrams // full-stack &amp; oss</div>
-
-      <div class="sb-label">Sections</div>
-      <ul class="sb-list">
-        <li><a href="/">index</a></li>
-        <li><a href="/writing/">writing</a></li>
-        <li class="active"><a href="/projects/">projects</a></li>
-        <li><a href="/about.html">about</a></li>
-        <li><a href="/now.html">now</a></li>
-      </ul>
-
-      <div class="sb-label">Projects</div>
-      <ul class="sb-list">
-        <li><a href="/projects/ding.html">ding</a></li>
-        <li><a href="/projects/free-design-md.html">free design.md</a></li>
-        <li><a href="/projects/remove-markdown.html">remove-markdown</a></li>
-        <li class="active"><a href="/projects/pegs.html">pegs<span class="play-tag">▸ play</span></a></li>
-        <li><a href="/projects/obsidian-readability.html">obsidian-readability</a></li>
-      </ul>
-
-      <div class="sb-label">Elsewhere</div>
-      <ul class="sb-list">
-        <li><a href="https://github.com/zuchka">github</a></li>
-        <li><a href="https://www.linkedin.com/in/matt-abrams-86732b1a4/">linkedin</a></li>
-        <li><a href="mailto:matt.j.abrams@gmail.com">email</a></li>
-        <li><a href="/rss.xml">rss</a></li>
-      </ul>
-
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button>
-
-      <div class="sb-foot">
-        MIT licensed source<br>
-        <a href="https://github.com/zuchka/zuchka.dev">github.com/zuchka/zuchka.dev</a>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="/">zuchka.dev</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="/projects/" aria-current="location">Projects</a>
+          <a href="/writing/">Writing</a>
+          <a href="/about.html">About</a>
+          <a href="/now.html">Now</a>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button>
       </div>
-    </aside>
+    </header>
 
-    <main class="main">
+    <main class="main" id="main" tabindex="-1">
 
       <section class="hero">
         <h1>P<span>EGS</span></h1>
@@ -233,12 +209,19 @@
         </ul>
       </section>
 
-      <footer class="page-foot">
-        <span>← <a href="/projects/">all projects</a></span>
-        <span><a href="https://github.com/zuchka/zuchka.dev">view source</a></span>
-      </footer>
-
     </main>
+    <footer class="page-foot">
+      <div class="footer-inner">
+        <span>© 2026 Matt Abrams</span>
+        <nav aria-label="Footer">
+          <a href="https://github.com/zuchka">GitHub</a>
+          <a href="https://www.linkedin.com/in/matt-abrams-86732b1a4/">LinkedIn</a>
+          <a href="mailto:matt.j.abrams@gmail.com">Email</a>
+          <a href="/rss.xml">RSS</a>
+          <a href="https://github.com/zuchka/zuchka.dev">Site source</a>
+        </nav>
+      </div>
+    </footer>
   </div>
         <script src="/theme.js"></script>
 </body>

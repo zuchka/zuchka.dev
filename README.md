@@ -53,9 +53,8 @@ That's it. No deps to install.
 
 1. `cp site/_project-template.html site/projects/<slug>.html`
 2. Replace the `{{TOKENS}}`
-3. Add the new project to the sidebar `Projects` list across **all** existing
-   pages. The sidebar is duplicated by design; see the `<aside class="sidebar">`
-   block in any existing page.
+3. Add the project to the appropriate list in `site/projects/index.html`. Feature it
+   on the homepage if appropriate. The shared navigation links to the project index.
 
 ## Deploy (Cloudflare Workers)
 
@@ -76,9 +75,10 @@ COEP-credentialless to allow js-dos's SharedArrayBuffer-backed emulation.
 
 ## Style tokens
 
-The palette began with Ding's original website: Courier New, a `#0e0e0e`
-background, and a `#7ee787` green accent. This site's tokens are defined as CSS
-custom properties at the top of `site/styles.css`.
+The shared tokens in `site/styles.css` define a warm off-white canvas, dark ink,
+system sans typography, and a green action accent. Light is the first-visit
+default. The header toggle saves the reader’s choice under `theme` in local
+storage. Each page restores an explicit dark preference before loading CSS.
 
 ## License
 
