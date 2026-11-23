@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Hundred Endings — zuchka.dev</title>
+  <meta name="author" content="Matt Abrams" />
+  <meta name="description" content="Lower temperatures favor the likeliest next token. Higher temperatures spread the odds more evenly." />
+  <link rel="canonical" href="https://zuchka.dev/animations/one-hundred-endings-teaching/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="One Hundred Endings" />
+  <meta property="og:description" content="Lower temperatures favor the likeliest next token. Higher temperatures spread the odds more evenly." />
+  <meta property="og:url" content="https://zuchka.dev/animations/one-hundred-endings-teaching/" />
+  <meta property="og:image" content="https://zuchka.dev/films/one-hundred-endings-teaching/v2/poster-wide.jpg" />
+  <meta property="og:image:alt" content="Opening frame from One Hundred Endings" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/animations/animations.css" />
+  <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
+  <script src="/theme.js" defer></script>
+  <script src="/animations/playback.js" defer></script>
+</head>
+<body>
+  <div class="layout">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="/">zuchka.dev</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="/projects/">Projects</a>
+          <a href="/writing/">Writing</a>
+          <a href="/about.html">About</a>
+          <a href="/now.html">Now</a>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button>
+      </div>
+    </header>
+    <main class="main film-watch" id="main" tabindex="-1">
+      <a class="film-back" href="/animations/">← All animations</a>
+      <video class="film-player" controls playsinline preload="metadata" poster="/films/one-hundred-endings-teaching/v2/poster.webp" aria-labelledby="film-title">
+        <source media="(min-width: 48rem) and (pointer: fine), (min-width: 48rem) and (min-height: 36rem)" src="/films/one-hundred-endings-teaching/v2/one-hundred-endings-teaching-wide.mp4" data-poster="/films/one-hundred-endings-teaching/v2/poster-wide.jpg" type="video/mp4" />
+        <source src="/films/one-hundred-endings-teaching/v2/one-hundred-endings-teaching-feed.mp4" data-poster="/films/one-hundred-endings-teaching/v2/poster.webp" type="video/mp4" />
+        <a href="/films/one-hundred-endings-teaching/v2/one-hundred-endings-teaching-wide.mp4">Watch One Hundred Endings</a>
+      </video>
+      <article class="film-copy">
+        <p class="film-meta">Next-token sampling · <time datetime="PT0M48S">0:48</time></p>
+        <h1 id="film-title">One Hundred Endings</h1>
+        <p>Lower temperatures favor the likeliest next token. Higher temperatures spread the odds more evenly.</p>
+        <details>
+          <summary>Transcript and sources</summary>
+          <h2 id="visual-transcript">Visual transcript</h2>
+          <p><strong>0:00–0:11</strong> The camera starts close on “amber,” then pulls back to reveal a sheet of 100 endings for “The light turned…”. Each spot is one try.</p>
+          <p><strong>0:11–0:17</strong> At temperature 0.4, the model favors “green.” In this four-word example, “amber” has about a 1% chance per try. It appears three times.</p>
+          <p><strong>0:17–0:25</strong> What happens at 1.6? There are five seconds to guess. A green slider moves right, and the number on the sheet rises from 0.4 to 1.6. The same 100 draws replay in their original positions.</p>
+          <p><strong>0:25–0:36</strong> “Amber” appears 15 times. Its chance per try rose to about 16%. “Green” is still the favorite. The footer compares both samples side by side.</p>
+          <p><strong>0:36–0:48</strong> AI engineers can lower temperature to tag similar refund requests with the same label, “billing.” They can raise it to draft several ways to reply to the same request.</p>
+          <h2 id="source">Source</h2>
+          <p>The film uses four illustrative word scores and the same 100 seeded draws at both temperatures. Temperature rescales the scores before sampling. <a href="https://huggingface.co/docs/transformers/main/en/internal/generation_utils#transformers.TemperatureLogitsWarper">Hugging Face Transformers — temperature in text generation</a></p>
+        </details>
+        <details id="downloads">
+          <summary>Downloads and standalone player</summary>
+          <ul>
+            <li><a href="/films/one-hundred-endings-teaching/v2/one-hundred-endings-teaching-feed.mp4" download>Feed · 4:5 MP4</a></li>
+            <li><a href="/films/one-hundred-endings-teaching/v2/one-hundred-endings-teaching-vertical.mp4" download>Vertical · 9:16 MP4</a></li>
+            <li><a href="/films/one-hundred-endings-teaching/v2/one-hundred-endings-teaching-wide.mp4" download>Widescreen · 16:9 MP4</a></li>
+            <li><a href="/films/one-hundred-endings-teaching/v2/one-hundred-endings-teaching.html">Open the standalone player</a></li>
+          </ul>
+        </details>
+      </article>
+    </main>
+    <footer class="page-foot">
+      <div class="footer-inner">
+        <span>© 2026 Matt Abrams</span>
+        <nav aria-label="Footer">
+          <a href="https://github.com/zuchka">GitHub</a>
+          <a href="https://www.linkedin.com/in/matt-abrams-86732b1a4/">LinkedIn</a>
+          <a href="mailto:matt.j.abrams@gmail.com">Email</a>
+          <a href="/rss.xml">RSS</a>
+          <a href="https://github.com/zuchka/zuchka.dev">Site source</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
