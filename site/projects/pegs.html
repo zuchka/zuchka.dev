@@ -33,25 +33,24 @@
       margin-bottom: 18px;
       padding: 24px;
     }
-    .pegs-stage button {
-      background: transparent;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      font-family: var(--font-mono);
-      font-size: 1rem;
-      padding: 12px 28px;
+    .pegs-stage .button {
+      border: 0;
+      font-family: inherit;
       cursor: pointer;
-      border-radius: var(--radius);
     }
-    .pegs-stage button:hover {
-      background: var(--accent);
-      color: var(--bg);
-    }
+    .pegs-stage .button:focus-visible { outline-color: white; }
     .pegs-stage .pegs-note {
-      color: var(--fg-muted);
-      font-size: 0.85rem;
+      color: #d7dfd5;
+      margin: 0;
+      font-size: 0.875rem;
       text-align: center;
       max-width: 460px;
+    }
+    .pegs-stage .pegs-error {
+      padding: 12px;
+      background: #fef3c7;
+      color: #92400e;
+      border-radius: var(--radius);
     }
     .pegs-meta-row {
       display: flex;
@@ -61,7 +60,7 @@
       flex-wrap: wrap;
       margin-bottom: 16px;
     }
-    .pegs-meta-row .pegs-meta-strong { color: var(--accent); }
+    .pegs-meta-row .pegs-meta-strong { color: var(--fg); }
   </style>
 </head>
 <body>
@@ -81,10 +80,13 @@
       </div>
     </header>
 
-    <main class="main" id="main" tabindex="-1">
+    <main class="main project" id="main" tabindex="-1">
 
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/projects/">Projects</a> <span aria-hidden="true">/</span> <span aria-current="page">PEGS</span>
+      </nav>
       <section class="hero">
-        <h1>P<span>EGS</span></h1>
+        <h1>PEGS</h1>
         <p class="tagline">Peg solitaire. Written in C by my father in 1991.</p>
         <p class="subtagline">A 35-year-old MS-DOS binary, untouched, running in your browser. The original code my dad wrote on a PC in 1991 — the same game, the same prompts, the same satisfying click of pegs jumping over each other.</p>
       </section>
@@ -109,8 +111,8 @@
           <p class="pegs-note">
             ▸ Boot the original 1991 MS-DOS binary in this browser tab.
           </p>
-          <button id="pegs-play">Run PEGS3.EXE</button>
-          <p class="pegs-note" style="font-size: 0.78rem;">
+          <button class="button" id="pegs-play" type="button">Run PEGS3.EXE</button>
+          <p class="pegs-note">
             js-dos runtime loads only when you click. Keyboard controls below.
           </p>
         </div>
@@ -151,9 +153,9 @@
               };
               script.onerror = function () {
                 stage.innerHTML =
-                  '<p class="pegs-note" style="color: var(--fg);">' +
+                  '<p class="pegs-note pegs-error" role="alert">' +
                   'Failed to load js-dos. ' +
-                  '<a href="/projects/pegs/PEGS3.EXE">Download PEGS3.EXE</a> ' +
+                  '<a href="/projects/pegs/PEGS3.EXE" download>Download PEGS3.EXE</a> ' +
                   'and run it in DOSBox locally.' +
                   '</p>';
               };
@@ -198,7 +200,7 @@
           <li><code>c:</code></li>
           <li><code>PEGS3.EXE</code></li>
         </ul>
-        <p>Or download the binary directly: <a href="/projects/pegs/PEGS3.EXE">PEGS3.EXE</a> (55KB).</p>
+        <p>Or download the binary directly: <a href="/projects/pegs/PEGS3.EXE" download>PEGS3.EXE</a> (55KB).</p>
       </section>
 
       <section>

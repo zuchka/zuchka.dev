@@ -4,12 +4,10 @@
   <slug>.html, and fill in the placeholders below.
 
   Placeholders to replace:
-    {{NAME_PRE}} {{NAME_GREEN}}  — project name split into two halves so the
-                                   second half renders in the green accent.
-                                   e.g. "remove-" + "markdown".
+    {{NAME}}                    — full project name.
     {{TAGLINE}}                 — one short line under the title.
     {{INTRO}}                   — one paragraph below the tagline.
-    {{STAT_*}}                  — numbers for the 4-up stats grid (see the
+    {{STAT_*}}                  — values for the stats grid (see the
                                    remove-markdown page for example wording).
     {{...sections...}}          — Why, How, Links, etc. — copy and adapt
                                    sections from the existing project pages.
@@ -20,7 +18,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{NAME_PRE}}{{NAME_GREEN}} — zuchka.dev</title>
+  <title>{{NAME}} — zuchka.dev</title>
   <meta name="description" content="{{DESCRIPTION}}" />
   <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
   <link rel="stylesheet" href="/styles.css" />
@@ -43,10 +41,13 @@
       </div>
     </header>
 
-    <main class="main" id="main" tabindex="-1">
+    <main class="main project" id="main" tabindex="-1">
 
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/projects/">Projects</a> <span aria-hidden="true">/</span> <span aria-current="page">{{NAME}}</span>
+      </nav>
       <section class="hero">
-        <h1>{{NAME_PRE}}<span>{{NAME_GREEN}}</span></h1>
+        <h1>{{NAME}}</h1>
         <p class="tagline">{{TAGLINE}}</p>
         <p class="subtagline">{{INTRO}}</p>
       </section>
@@ -85,7 +86,7 @@
       <section>
         <h2>Links</h2>
         <ul class="features">
-          <li><strong><a href="">github.com/zuchka/{{REPO}}</a></strong> — source</li>
+          <li><strong><a href="https://github.com/zuchka/{{REPO}}">github.com/zuchka/{{REPO}}</a></strong> — source</li>
         </ul>
       </section>
 

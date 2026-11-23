@@ -117,19 +117,29 @@ code { font-size: 0.92em; }
   .theme-toggle { grid-column: 2; grid-row: 1; }
 }
 
-/* ── Hero (home page) ── */
+/* Interior pages */
 
 .hero { margin-bottom: 56px; }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 5.5vw, 3.2rem);
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
   color: var(--fg);
-  font-weight: bold;
-  letter-spacing: -1px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
   line-height: 1.1;
   margin-bottom: 14px;
 }
-.hero h1 span { color: var(--fg); }
+.project { max-width: 52rem; }
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  color: var(--fg-muted);
+  font-size: 0.8125rem;
+  overflow-wrap: anywhere;
+}
 
 .hero .tagline {
   font-size: 1.15rem;
@@ -247,9 +257,10 @@ p { margin-bottom: 16px; max-width: 70ch; }
 /* Stats and project lists */
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--stat-count, 3), minmax(0, 1fr));
   border-block: 1px solid var(--border);
 }
+.stats-four { --stat-count: 4; }
 .stat { margin-block: 24px; padding-inline: clamp(16px, 3vw, 40px); }
 .stat:first-child { padding-left: 0; }
 .stat + .stat { border-inline-start: 1px solid var(--border); }
@@ -329,7 +340,7 @@ p { margin-bottom: 16px; max-width: 70ch; }
 
 .callout {
   background: var(--bg-panel);
-  border-left: 3px solid var(--accent);
+  border-left: 2px solid var(--border);
   padding: 18px 22px;
   margin-bottom: 24px;
   font-size: 1rem;
@@ -350,30 +361,17 @@ pre {
   font-size: 0.95rem;
   line-height: 1.7;
 }
-pre code { color: var(--fg-muted); }
+pre code { font-size: inherit; }
 pre .comment { color: var(--fg-muted); }
-pre .key  { color: var(--fg); }
-pre .str  { color: var(--fg); }
-pre .num  { color: var(--fg); }
-pre .cmd  { color: var(--fg); }
-pre .flag { color: var(--fg-muted); }
+pre .key, pre .cmd { font-weight: 600; }
 
-/* ── Feature list (· green dot prefix) ── */
-
-.features { list-style: none; }
+/* Project and reading lists */
+.features { list-style: none; margin-bottom: 20px; }
 .features li {
-  padding: 14px 0;
+  padding-block: 12px;
   border-bottom: 1px solid var(--border);
-  color: var(--fg-muted);
-  display: flex;
-  gap: 12px;
+  overflow-wrap: anywhere;
 }
-.features li::before {
-  content: "·";
-  color: var(--fg);
-  flex-shrink: 0;
-}
-.features li strong { color: var(--fg); }
 
 /* ── Tables (about / cv) ── */
 
