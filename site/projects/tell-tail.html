@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tell-Tail — zuchka.dev</title>
+  <meta name="description" content="Tell-Tail is Matt Abrams’ open-source tool for inspecting AI tool calls and application logs locally." />
+  <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
+</head>
+<body>
+  <div class="layout">
+
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="/">zuchka.dev</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="/projects/" aria-current="location">Projects</a>
+          <a href="/writing/">Writing</a>
+          <a href="/about.html">About</a>
+          <a href="/now.html">Now</a>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button>
+      </div>
+    </header>
+
+    <main class="main project" id="main" tabindex="-1">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/projects/">Projects</a> <span aria-hidden="true">/</span> <span aria-current="page">Tell-Tail</span>
+      </nav>
+      <section class="hero">
+        <h1>Tell-Tail</h1>
+        <p class="tagline">See what your tools did.</p>
+        <p class="subtagline">Tell-Tail is the open-source Rust tool I build for inspecting tool calls and application logs on my own machine. I use its local dashboard to find a failed call and see which server handled it.</p>
+      </section>
+
+      <section>
+        <h2>Try a tool-call trace</h2>
+        <p>The built-in demo opens the AI Activity timeline with sample events. Select a call to inspect its tool, duration, and outcome.</p>
+        <pre><code>brew install ding-labs/tap/tell-tail
+tell-tail desktop --demo --open</code></pre>
+        <p>For a live session, the <a href="https://tell-tail.dev/docs/plugin-tracing/">tracing guide</a> explains how to capture tool results from Codex.</p>
+      </section>
+
+      <section>
+        <h2>Follow an application log</h2>
+        <p>Point Tell-Tail at a file your application is writing. The Logs workspace shows throughput, warnings, and recent errors as new lines arrive.</p>
+        <pre><code>tell-tail app.log --output web --open</code></pre>
+        <div class="actions">
+          <a class="button" href="https://tell-tail.dev/">Visit Tell-Tail</a>
+          <a class="text-link" href="https://github.com/zuchka/tell-tail">View source <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+    </main>
+    <footer class="page-foot">
+      <div class="footer-inner">
+        <span>© 2026 Matt Abrams</span>
+        <nav aria-label="Footer">
+          <a href="https://github.com/zuchka">GitHub</a>
+          <a href="https://www.linkedin.com/in/matt-abrams-86732b1a4/">LinkedIn</a>
+          <a href="mailto:matt.j.abrams@gmail.com">Email</a>
+          <a href="/rss.xml">RSS</a>
+          <a href="https://github.com/zuchka/zuchka.dev">Site source</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+        <script src="/theme.js"></script>
+</body>
+</html>
