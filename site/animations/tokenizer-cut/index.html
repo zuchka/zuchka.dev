@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Where does the tokenizer cut? — zuchka.dev</title>
+  <meta name="author" content="Matt Abrams" />
+  <meta name="description" content="GPT-4o splits pineapple into two tokens. Capitalizing the first letter makes three. With one leading space, the lowercase word and the space share a single token." />
+  <link rel="canonical" href="https://zuchka.dev/animations/tokenizer-cut/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Where does the tokenizer cut?" />
+  <meta property="og:description" content="GPT-4o splits pineapple into two tokens. Capitalizing the first letter makes three. With one leading space, the lowercase word and the space share a single token." />
+  <meta property="og:url" content="https://zuchka.dev/animations/tokenizer-cut/" />
+  <meta property="og:image" content="https://zuchka.dev/films/tokenizer-cut/v2/poster-wide.jpg" />
+  <meta property="og:image:alt" content="Opening frame from Where does the tokenizer cut?" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/animations/animations.css" />
+  <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
+  <script src="/theme.js" defer></script>
+  <script src="/animations/playback.js" defer></script>
+</head>
+<body>
+  <div class="layout">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="/">zuchka.dev</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="/projects/">Projects</a>
+          <a href="/writing/">Writing</a>
+          <a href="/about.html">About</a>
+          <a href="/now.html">Now</a>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button>
+      </div>
+    </header>
+    <main class="main film-watch" id="main" tabindex="-1">
+      <a class="film-back" href="/animations/">← All animations</a>
+      <video class="film-player" controls playsinline preload="metadata" poster="/films/tokenizer-cut/v2/poster.webp" aria-labelledby="film-title">
+        <source media="(min-width: 48rem) and (pointer: fine), (min-width: 48rem) and (min-height: 36rem)" src="/films/tokenizer-cut/v2/tokenizer-cut-wide.mp4" data-poster="/films/tokenizer-cut/v2/poster-wide.jpg" type="video/mp4" />
+        <source src="/films/tokenizer-cut/v2/tokenizer-cut-feed.mp4" data-poster="/films/tokenizer-cut/v2/poster.webp" type="video/mp4" />
+        <a href="/films/tokenizer-cut/v2/tokenizer-cut-wide.mp4">Watch Where does the tokenizer cut?</a>
+      </video>
+      <article class="film-copy">
+        <p class="film-meta">Tokenization · <time datetime="PT0M20S">0:20</time></p>
+        <h1 id="film-title">Where does the tokenizer cut?</h1>
+        <p>GPT-4o splits pineapple into two tokens. Capitalizing the first letter makes three. With one leading space, the lowercase word and the space share a single token.</p>
+        <details>
+          <summary>Transcript and sources</summary>
+          <h2 id="visual-transcript">Visual transcript</h2>
+          <p>An engraved pineapple sits above its printed name. Where does the tokenizer cut? The fruit and word split into <code>pine</code> and <code>apple</code>. Their token IDs are 52736 and 34058.</p>
+          <p>Capitalize the first letter. <code>Pineapple</code> splits into <code>P</code>, <code>ine</code>, and <code>apple</code>, with IDs 47, 514, and 34058. The final piece keeps its ID.</p>
+          <p>Return to lowercase and add one space before the word. A bracket marks the space. The fruit stays whole. The space and all nine letters share token ID 116890. The final frame lines up the three inputs and their counts of two, three, and one.</p>
+          <h2 id="sources">Sources</h2>
+          <p>The film uses OpenAI’s <code>o200k_base</code> encoding for GPT-4o. The token IDs were generated with tiktoken 0.12.0. <a href="https://github.com/openai/tiktoken">OpenAI tiktoken</a> · <a href="https://github.com/openai/tiktoken/blob/0.12.0/tiktoken/model.py">Model-to-encoding mapping</a></p>
+        </details>
+        <details id="downloads">
+          <summary>Downloads and standalone player</summary>
+          <ul>
+            <li><a href="/films/tokenizer-cut/v2/tokenizer-cut-feed.mp4" download>Feed · 4:5 MP4</a></li>
+            <li><a href="/films/tokenizer-cut/v2/tokenizer-cut-vertical.mp4" download>Vertical · 9:16 MP4</a></li>
+            <li><a href="/films/tokenizer-cut/v2/tokenizer-cut-wide.mp4" download>Widescreen · 16:9 MP4</a></li>
+            <li><a href="/films/tokenizer-cut/v2/tokenizer-cut.html">Open the standalone player</a></li>
+          </ul>
+        </details>
+      </article>
+    </main>
+    <footer class="page-foot">
+      <div class="footer-inner">
+        <span>© 2026 Matt Abrams</span>
+        <nav aria-label="Footer">
+          <a href="https://github.com/zuchka">GitHub</a>
+          <a href="https://www.linkedin.com/in/matt-abrams-86732b1a4/">LinkedIn</a>
+          <a href="mailto:matt.j.abrams@gmail.com">Email</a>
+          <a href="/rss.xml">RSS</a>
+          <a href="https://github.com/zuchka/zuchka.dev">Site source</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
