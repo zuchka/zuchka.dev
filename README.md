@@ -3,7 +3,7 @@
 Source for [zuchka.dev](https://zuchka.dev) — Matt Abrams' developer portfolio and writing archive.
 
 Hand-written HTML, no build step, no JS framework. One shared `styles.css`,
-one HTML file per page. The deployed site is exactly what's in `site/`.
+one HTML file per page. The Worker serves `site/` and streams animation videos from R2.
 
 ## Layout
 
@@ -56,13 +56,23 @@ That's it. No deps to install.
 3. Add the project to the appropriate list in `site/projects/index.html`. Feature it
    on the homepage if appropriate. The shared navigation links to the project index.
 
+## Add an animation
+
+Add a watch page under `site/animations/<slug>/` using an existing film as a reference. Add it to `site/animations/index.html`. Copy the poster, widescreen social image and standalone player to `site/films/<slug>/<version>/`.
+
+Upload the MP4s before deploying the page. Use a new version when replacing a released cut.
+
+```sh
+node scripts/upload-film.mjs /path/to/films/tokenizer-cut/v2
+```
+
+The browser uses the same `/films/<slug>/<version>/` URL for video and static assets. Use `npx wrangler dev` to test the video route with a local R2 object or verify playback and seeking on a deployed preview.
+
 ## Deploy (Cloudflare Workers)
 
 The production `zuchka-dev` Worker serves the static files in `site/` at
 `zuchka.dev`. Cloudflare Workers Builds is connected to this GitHub repository.
-A push to `main` runs `npx wrangler deploy` with `site/` as the asset directory;
-Wrangler generates its configuration during the build. There is no separate Pages
-project or checked-in Wrangler config.
+A push to `main` runs `npx wrangler deploy` with `wrangler.jsonc` as its configuration.
 
 To publish, commit and push to `main`, then check the `zuchka-dev` build in
 Cloudflare and the live site. If an old page persists after a successful deploy,
