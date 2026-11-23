@@ -1,0 +1,122 @@
+.animation-heading {
+  margin-bottom: clamp(24px, 4vw, 48px);
+}
+
+.animation-heading h1,
+.film-copy h1 {
+  font-size: clamp(2.4rem, 6vw, 4.75rem);
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.animation-heading p {
+  margin-top: 12px;
+  color: var(--fg-muted);
+}
+
+.animation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 48px) clamp(16px, 2.8vw, 32px);
+  list-style: none;
+}
+
+.animation-card {
+  display: block;
+  text-decoration: none;
+}
+
+.film-poster {
+  position: relative;
+  display: block;
+  aspect-ratio: 2.05;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #ece5f3;
+}
+
+.film-poster img,
+.film-poster video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.film-poster video { opacity: 0; pointer-events: none; }
+.film-poster video[data-playing] { opacity: 1; }
+
+.film-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 12px 0 4px;
+  color: var(--fg-muted);
+  font-size: 0.8125rem;
+}
+
+.animation-card h2 {
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.animation-card:is(:hover, :focus-visible) h2 { text-decoration: underline; }
+
+.film-watch {
+  max-width: 70rem;
+  padding-top: clamp(12px, 2vw, 24px);
+}
+
+.film-back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-bottom: 4px;
+  font-size: 0.875rem;
+}
+
+.film-player {
+  display: block;
+  width: min(100%, max(16rem, calc((100svh - 8rem) * 4 / 5)));
+  aspect-ratio: 4 / 5;
+  margin-inline: auto;
+  border-radius: var(--radius);
+  background: #f7f6f2;
+}
+
+.film-copy {
+  max-width: 43rem;
+  margin: clamp(24px, 4vw, 44px) auto 0;
+}
+
+.film-copy h1 { font-size: clamp(2.15rem, 5.5vw, 3.75rem); }
+.film-copy > p { margin-top: 12px; }
+.film-copy > .film-meta { display: block; margin: 0 0 8px; }
+.film-copy details { margin-top: 16px; border-top: 1px solid var(--border); }
+.film-copy summary { padding-block: 12px; cursor: pointer; font-weight: 600; }
+.film-copy details p, .film-copy details h2 { margin: 0 0 12px; }
+.film-copy details h2 { font-size: 1.125rem; margin-top: 12px; }
+.film-copy details ul { padding-left: 1.3em; }
+.film-copy details li + li { margin-top: 4px; }
+
+@media (min-width: 48rem) and (pointer: fine), (min-width: 48rem) and (min-height: 36rem) {
+  .film-player {
+    width: min(100%, max(32rem, calc((100svh - 9rem) * 16 / 9)));
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 54rem) {
+  .animation-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 34rem) {
+  .animation-grid { grid-template-columns: minmax(0, 1fr); }
+}
