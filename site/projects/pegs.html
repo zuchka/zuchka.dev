@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PEGS — zuchka.dev</title>
   <meta name="description" content="Peg solitaire, written in C by my father Howard Abrams in 1991. The original MS-DOS binary, playable in your browser." />
-  <script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+  <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
   <link rel="stylesheet" href="/styles.css" />
   <link rel="alternate" type="application/rss+xml" title="zuchka.dev — writing" href="/rss.xml" />
 
@@ -13,7 +13,7 @@
     /* Page-local: PEGS embed + heritage gif */
     .pegs-poster {
       max-width: 100%;
-      border: 1px solid var(--border-2);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       background: #000;
       display: block;
@@ -21,7 +21,7 @@
     }
     .pegs-stage {
       background: #000;
-      border: 1px solid var(--border-2);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       aspect-ratio: 16 / 10;
       max-width: 720px;
@@ -48,7 +48,7 @@
       color: var(--bg);
     }
     .pegs-stage .pegs-note {
-      color: var(--fg-faint);
+      color: var(--fg-muted);
       font-size: 0.85rem;
       text-align: center;
       max-width: 460px;
@@ -57,7 +57,7 @@
       display: flex;
       gap: 24px;
       font-size: 0.85rem;
-      color: var(--fg-label);
+      color: var(--fg-muted);
       flex-wrap: wrap;
       margin-bottom: 16px;
     }
@@ -97,7 +97,7 @@
         <li><a href="/rss.xml">rss</a></li>
       </ul>
 
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">◑ light mode</button>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button>
 
       <div class="sb-foot">
         MIT licensed source<br>
@@ -175,7 +175,7 @@
               };
               script.onerror = function () {
                 stage.innerHTML =
-                  '<p class="pegs-note" style="color: var(--num);">' +
+                  '<p class="pegs-note" style="color: var(--fg);">' +
                   'Failed to load js-dos. ' +
                   '<a href="/projects/pegs/PEGS3.EXE">Download PEGS3.EXE</a> ' +
                   'and run it in DOSBox locally.' +
