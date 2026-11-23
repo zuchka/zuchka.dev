@@ -1,0 +1,18 @@
+{
+  "name": "zuchka-dev",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-06",
+  "workers_dev": true,
+  "preview_urls": true,
+  "routes": [{ "pattern": "zuchka.dev", "custom_domain": true }],
+  "assets": {
+    "directory": "./site",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  },
+  "r2_buckets": [{ "binding": "FILMS", "bucket_name": "sothats-how-films" }],
+  "observability": {
+    "enabled": true,
+    "traces": { "enabled": true, "head_sampling_rate": 0.01 }
+  }
+}
